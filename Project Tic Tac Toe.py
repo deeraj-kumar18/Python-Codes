@@ -3,35 +3,40 @@ def initialize_grid(n):
     for i in range(n):
         row=[]
         for j in range(n):
-            row.append(" * ")
+            row.append(" ")
         grid.append(row)
     
     return grid
 
 def print_grid(grid):
+    n=len(grid)
     for row in grid:
-        for ele in row:
-            print(ele,end=" ")
-        print()
+        print(" | ".join(row))
+        print("-" * (n * 2 + (n)))
 
         
 def get_user_input():
-    row,col=map(int,input("Enter the row and col number of the grid, where you want to mark it. ").split())
-    return row,col
+    while True:
+        try:
+            row,col=map(int,input("Enter the row and col number of the grid, where you want to mark it. ").split())
+            return row-1,col-1   # for Zero indexing
+        except ValueError:
+            print("Invalid Input. Enter two numbers separated by Space.")
 
+def is_valid_move(row,col,grid):
+    n=len(grid)
+    if 0<=row<=n and 0<=col<=n and grid[row][col] == " ":
+        return True
+    return False
+          
 def place_mark(sym,row,col,grid):
     grid[row][col]=sym
     
-def check_win(grid):
+def check_win(grid,sym):
     all_lines=vertical_check(grid)+horizontal_check(grid)+diagonal_check(grid)
-
-    player_x = ["X"]*len(grid)
-    player_o = ["O"]*len(grid)
-
-    if player_x  in all_lines:
-        return "Player X wins."
-    elif player_o in all_lines:
-        return "Player O wins."
+    if [sym]*len(grid) in all_lines:
+        return True
+    return False
 
 def vertical_check(grid):
     cols=[]
@@ -63,18 +68,48 @@ def diagonal_check(grid):
     return diag
 
 def check_draw(grid):
-    return
+    return all(cell != " " for row in grid for cell in row)
 
 def switch_player(player):
-    if player=="p1":
-        return "p2"
+    if player=="X":
+        player="O"
     else:
-        return "p1"
+        player="X"
+    return player
 
 def play_game():
+    print("Welcome to Tic Tac Toe!")
+    print("This is a 2 Player Game. \n Player 1 has the Symbol 'X' \n Player 2 has the Symbol 'O' ")
+    size=int(input("Enter the size of the Grid(eg:3,4,5): "))
+    grid=initialize_grid(size)
+    player="X"
     while True:
+        print_grid(grid)
+        print(f"This is Player {player}'s turn")
+        while True:
+            row,col=get_user_input()
+            if is_valid_move(row,col,grid):
+                break
+            else:
+                print("Invalid Move. Try Again")
         
-        grid=initialize_grid()
-# b=[["X","e","X"],["W","W","z"],["O","O","O"]]
-# a=check_win(b)
-# print(a)
+        place_mark(player,row,col,grid)
+
+        if check_win(grid,player):
+            print_grid(grid)
+            print(f"Player {player} wins!.")
+            break
+        
+        if check_draw(grid):
+            print_grid(grid)
+            print("The game is a draw!")
+            break
+        
+        player = switch_player(player)
+
+
+
+        
+
+
+play_game()

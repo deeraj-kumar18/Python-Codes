@@ -181,6 +181,22 @@ def pattern13(n):
             a+=1
         print()
 
+# Pattern 14
+'''
+A
+A B
+A B C
+'''
+
+def pattern14(n):
+    print("Pattern 14")
+    for i in range(n):
+        A=65
+        for i in range(i+1):
+            print(chr(A),end=" ")
+            A+=1
+        print()
+
 
 def main():
     pattern1(3)
@@ -196,6 +212,6 @@ def main():
     pattern11(3)
     pattern12(3)
     pattern13(3)
-    
+    pattern14(3)
 
 main()

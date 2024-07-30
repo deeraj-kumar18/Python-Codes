@@ -50,10 +50,25 @@ def pattern4(n):
             print(i, end = " ")
         print()
 
+# Pattern 5
+'''
+* * *
+* *
+*
+'''   
+
+def pattern5(n):
+    print("Pattern 5")
+    for i in range(n,0,-1):
+        print("* "*i)
+
+
+
 def main():
     pattern1(3)
     pattern2(3)
     pattern3(3)
     pattern4(3)
+    pattern5(3)
 
 main()

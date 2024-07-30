@@ -76,6 +76,18 @@ def pattern6(n):
             print(j,end=" ")
         print()
 
+# Pattern 7
+'''
+  *
+ ***
+*****
+'''   
+
+def pattern7(n):
+    print("Pattern 7")
+    for i in range(n):
+        print(" "*(n-i-1)+"*"*((i*2)+1)+" "*(n-i-1))
+
 
 def main():
     pattern1(3)
@@ -84,5 +96,6 @@ def main():
     pattern4(3)
     pattern5(3)
     pattern6(3)
+    pattern7(3)
 
 main()

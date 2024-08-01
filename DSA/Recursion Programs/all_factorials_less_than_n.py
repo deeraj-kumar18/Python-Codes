@@ -14,10 +14,10 @@ Output: 1 2 6
 '''
 def factorialNumbers(n):
     def findFactorial(cur_Fact,i):
-        if cur_Fact>n:
+        if cur_Fact>n:  # we are checking till the breaking condition.
             return  
-        result.append(cur_Fact)
-        findFactorial(cur_Fact * (i+1),i+1)
+        result.append(cur_Fact) # if the current factorial is less than n, we append to the list.
+        findFactorial(cur_Fact * (i+1),i+1) # recursive call with updated factorial value and i.
     
 
     result=[]

@@ -5,9 +5,12 @@ Time Complexity: O(n**2)
 '''
 def bubble_sort(arr,n):
     for i in range(n+1):
+        # print("Iteration",i)
         for j in range(n-i-1):
+            # print(j)
             if arr[j]>arr[j+1]:
                 arr[j],arr[j+1]=arr[j+1],arr[j]
+            # print(arr)
             
     print(arr)
 

@@ -46,6 +46,6 @@ def merge_sort(arr,low,high):
 
 
 
-a=[4,1,3,9,7,2,5,8,6]
+a=[4,1,3,43,33,9,7,2,5,8,6]
 b=merge_sort(a,0,len(a)-1)
 print(b)

@@ -1,7 +1,8 @@
 '''
 MERGE SORT
 Divide the array into halves and merge them back in sorted way.
-Time Complexity: O(N logn)
+Time Complexity: O(N logN)
+Space Complexity: O(N)  for temporary array
 '''
 
 def merge(arr,l,mid,r):

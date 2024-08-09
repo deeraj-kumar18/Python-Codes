@@ -73,6 +73,13 @@ def pattern6(n):
             print(j,end=" ")
         print()
 
+# Pattern 7
+'''
+  *
+ ***
+*****
+'''   
+
 def main():
     pattern1(3)
     pattern2(3)

@@ -8,3 +8,10 @@ def pattern1(n):
     print("Pattern 1")
     for i in range(n):
         print("* "*n)
+
+# Pattern 2
+'''
+* 
+* *
+* * *
+'''

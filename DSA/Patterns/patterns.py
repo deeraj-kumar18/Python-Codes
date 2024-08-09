@@ -46,10 +46,97 @@ def pattern4(n):
             print(i, end = " ")
         print()
 
+# Pattern 5
+'''
+* * *
+* *
+*
+'''   
+
+def pattern5(n):
+    print("Pattern 5")
+    for i in range(n,0,-1):
+        print("* "*i)
+
+
+# Pattern 6
+'''
+1 2 3
+1 2
+1
+'''   
+
+def pattern6(n):
+    print("Pattern 6")
+    for i in range(n,0,-1):
+        for j in range(1,i+1):
+            print(j,end=" ")
+        print()
+
+# Pattern 7
+'''
+  *
+ ***
+*****
+'''   
+def pattern7(n):
+    print("Pattern 7")
+    for i in range(n):
+        print(" "*(n-i-1)+"*"*((i*2)+1)+" "*(n-i-1))
+
+# Pattern 8
+'''
+*****
+ ***
+  *
+'''   
+def pattern8(n):
+    print("Pattern 8")
+    for i in range(n,0,-1):
+        print(" "*(n-i) +"*"*(2*i-1))
+
+# Pattern 9
+'''
+  *
+ ***
+*****
+*****
+ ***
+  *
+'''
+def pattern9(n):
+    print("Pattern 9")
+    for i in range(n):
+        print(" "*(n-i-1)+"*"*((i*2)+1)+" "*(n-i-1))
+    for i in range(n,0,-1):
+        print(" "*(n-i) +"*"*(2*i-1))
+
+# Pattern 10
+'''
+*
+**
+***
+**
+*
+'''
+def pattern10(n):
+    print("Pattern 10")
+    for i in range(1,n):
+        print("*"*i)
+    for i in range(n,0,-1):
+        print("*"*i)
+
+
 def main():
     pattern1(3)
     pattern2(3)
     pattern3(3)
     pattern4(3)
+    pattern5(3)
+    pattern6(3)
+    pattern7(3)
+    pattern8(3)
+    pattern9(3)
+    pattern10(3)
 
 main()

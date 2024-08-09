@@ -20,6 +20,12 @@ def pattern2(n):
     for i in range(1,n+1):
         print("* "*i)
 
+# Pattern 3
+''' 
+1
+1 2 
+1 2 3
+'''
 
 def main():
     pattern1(3)

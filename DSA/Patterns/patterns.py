@@ -15,3 +15,7 @@ def pattern1(n):
 * *
 * * *
 '''
+def pattern2(n):
+    print("Pattern 2")
+    for i in range(1,n+1):
+        print("* "*i)

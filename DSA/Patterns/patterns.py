@@ -58,6 +58,14 @@ def pattern5(n):
     for i in range(n,0,-1):
         print("* "*i)
 
+
+# Pattern 6
+'''
+1 2 3
+1 2
+1
+'''   
+
 def main():
     pattern1(3)
     pattern2(3)

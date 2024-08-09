@@ -66,11 +66,19 @@ def pattern5(n):
 1
 '''   
 
+def pattern6(n):
+    print("Pattern 6")
+    for i in range(n,0,-1):
+        for j in range(1,i+1):
+            print(j,end=" ")
+        print()
+
 def main():
     pattern1(3)
     pattern2(3)
     pattern3(3)
     pattern4(3)
     pattern5(3)
+    pattern6(3)
 
 main()

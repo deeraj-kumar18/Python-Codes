@@ -139,6 +139,13 @@ def pattern11(n):
             print((i+j+1)%2,end=" ")
         print()
 
+# Pattern 12
+'''
+1         1
+1 2     2 1
+1 2 3 3 2 1
+'''
+
 def main():
     pattern1(3)
     pattern2(3)

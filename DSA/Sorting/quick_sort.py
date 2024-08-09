@@ -7,3 +7,4 @@ Why Quick Sort over Merge sort? It doesnt use extra space.
 '''
 def quick_sort(arr,n):
     return
+

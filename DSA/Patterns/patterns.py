@@ -132,6 +132,12 @@ def pattern10(n):
 0 1
 1 0 1
 '''
+def pattern11(n):
+    print("Pattern 11")
+    for i in range(n):
+        for j in range(i+1):
+            print((i+j+1)%2,end=" ")
+        print()
 
 def main():
     pattern1(3)
@@ -144,5 +150,6 @@ def main():
     pattern8(3)
     pattern9(3)
     pattern10(3)
+    pattern11(3)
 
 main()

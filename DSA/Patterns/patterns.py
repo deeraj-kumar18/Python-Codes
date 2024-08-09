@@ -126,6 +126,12 @@ def pattern10(n):
     for i in range(n,0,-1):
         print("*"*i)
 
+# Pattern 11
+'''
+1
+0 1
+1 0 1
+'''
 
 def main():
     pattern1(3)

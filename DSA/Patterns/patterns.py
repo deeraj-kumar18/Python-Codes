@@ -33,6 +33,13 @@ def pattern3(n):
             print(j,end=" ")
         print()
 
+# Pattern 4
+'''
+1 
+2 2 
+3 3 3
+'''   
+
 def main():
     pattern1(3)
     pattern2(3)

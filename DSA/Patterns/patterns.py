@@ -46,6 +46,13 @@ def pattern4(n):
             print(i, end = " ")
         print()
 
+# Pattern 5
+'''
+* * *
+* *
+*
+'''   
+
 def main():
     pattern1(3)
     pattern2(3)

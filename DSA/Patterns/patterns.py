@@ -32,9 +32,10 @@ def pattern3(n):
         for j in range(1,i+1):
             print(j,end=" ")
         print()
-        
+
 def main():
     pattern1(3)
     pattern2(3)
+    pattern3(3)
 
 main()

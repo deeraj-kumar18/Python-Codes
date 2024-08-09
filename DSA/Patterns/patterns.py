@@ -104,6 +104,12 @@ def pattern8(n):
  ***
   *
 '''
+def pattern9(n):
+    print("Pattern 9")
+    for i in range(n):
+        print(" "*(n-i-1)+"*"*((i*2)+1)+" "*(n-i-1))
+    for i in range(n,0,-1):
+        print(" "*(n-i) +"*"*(2*i-1))
 
 def main():
     pattern1(3)
@@ -114,5 +120,6 @@ def main():
     pattern6(3)
     pattern7(3)
     pattern8(3)
+    pattern9(3)
 
 main()

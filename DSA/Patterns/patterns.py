@@ -207,7 +207,15 @@ A
 B B
 C C C
 '''
-
+def pattern16(n):
+    print("Pattern 16")
+    A=65
+    for i in range(n):
+        for i in range(i+1):
+            print(chr(A),end=" ")
+        print()
+        A+=1
+        
 def main():
     pattern1(3)
     pattern2(3)

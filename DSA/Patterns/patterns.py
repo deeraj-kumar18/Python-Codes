@@ -171,7 +171,13 @@ def pattern13(n):
             a+=1
         print()
 
-        
+# Pattern 14
+'''
+A
+A B
+A B C
+'''
+
 def main():
     pattern1(3)
     pattern2(3)

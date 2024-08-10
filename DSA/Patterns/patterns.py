@@ -186,6 +186,12 @@ def pattern14(n):
             A+=1
         print()
 
+# Pattern 15
+'''
+A B C
+A B
+A
+'''
 def main():
     pattern1(3)
     pattern2(3)

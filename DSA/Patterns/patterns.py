@@ -200,7 +200,14 @@ def pattern15(n):
             print(chr(A),end=" ")
             A+=1
         print()
-        
+
+# Pattern 16
+'''
+A
+B B
+C C C
+'''
+
 def main():
     pattern1(3)
     pattern2(3)
@@ -216,5 +223,7 @@ def main():
     pattern12(3)
     pattern13(3)
     pattern14(3)
+    pattern15(3)
+    pattern16(3)
 
 main()

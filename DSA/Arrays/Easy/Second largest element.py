@@ -23,6 +23,20 @@ def second_largest_better(arr):
 
     return second_largest
 
+# OPTIMAL APPROACH Time Complexity : 
+def second_largest_optimal(arr):
+    largest=arr[0]
+    second_largest=float('-inf')
+    for i in range(1,len(arr)):
+        if(arr[i]>largest):
+            second_largest=largest
+            largest=arr[i]
+        elif(arr[i]<largest and arr[i]>second_largest):
+            second_largest=arr[i]
+
+    return second_largest
+
 arr=[1,7,8,6,4,2]
 print(second_largest_bruteforce(arr))
 print(second_largest_better(arr))
+print(second_largest_optimal(arr))

@@ -8,6 +8,7 @@ def pattern1(n):
     print("Pattern 1")
     for i in range(n):
         print("* "*n)
+    print("===========")
 
 # Pattern 2
 '''
@@ -19,6 +20,7 @@ def pattern2(n):
     print("Pattern 2")
     for i in range(1,n+1):
         print("* "*i)
+    print("===========")
 
 # Pattern 3
 ''' 
@@ -32,6 +34,7 @@ def pattern3(n):
         for j in range(1,i+1):
             print(j,end=" ")
         print()
+    print("===========")
 
 # Pattern 4
 '''
@@ -45,6 +48,7 @@ def pattern4(n):
         for j in range(1,i+1):
             print(i, end = " ")
         print()
+    print("===========")
 
 # Pattern 5
 '''
@@ -52,12 +56,11 @@ def pattern4(n):
 * *
 *
 '''   
-
 def pattern5(n):
     print("Pattern 5")
     for i in range(n,0,-1):
         print("* "*i)
-
+    print("===========")
 
 # Pattern 6
 '''
@@ -65,13 +68,13 @@ def pattern5(n):
 1 2
 1
 '''   
-
 def pattern6(n):
     print("Pattern 6")
     for i in range(n,0,-1):
         for j in range(1,i+1):
             print(j,end=" ")
         print()
+    print("===========")
 
 # Pattern 7
 '''
@@ -83,6 +86,7 @@ def pattern7(n):
     print("Pattern 7")
     for i in range(n):
         print(" "*(n-i-1)+"*"*((i*2)+1)+" "*(n-i-1))
+    print("===========")
 
 # Pattern 8
 '''
@@ -94,6 +98,7 @@ def pattern8(n):
     print("Pattern 8")
     for i in range(n,0,-1):
         print(" "*(n-i) +"*"*(2*i-1))
+    print("===========")
 
 # Pattern 9
 '''
@@ -110,6 +115,7 @@ def pattern9(n):
         print(" "*(n-i-1)+"*"*((i*2)+1)+" "*(n-i-1))
     for i in range(n,0,-1):
         print(" "*(n-i) +"*"*(2*i-1))
+    print("===========")
 
 # Pattern 10
 '''
@@ -125,6 +131,7 @@ def pattern10(n):
         print("*"*i)
     for i in range(n,0,-1):
         print("*"*i)
+    print("===========")
 
 # Pattern 11
 '''
@@ -138,6 +145,7 @@ def pattern11(n):
         for j in range(i+1):
             print((i+j+1)%2,end=" ")
         print()
+    print("===========")
 
 # Pattern 12
 '''
@@ -155,6 +163,7 @@ def pattern12(n):
         for j in range(i,0,-1):
             print(j,end=" ")
         print()
+    print("===========")
 
 # Pattern 13
 '''
@@ -170,6 +179,7 @@ def pattern13(n):
             print(a,end=" ")
             a+=1
         print()
+    print("===========")
 
 # Pattern 14
 '''
@@ -185,6 +195,7 @@ def pattern14(n):
             print(chr(A),end=" ")
             A+=1
         print()
+    print("===========")
 
 # Pattern 15
 '''
@@ -200,6 +211,7 @@ def pattern15(n):
             print(chr(A),end=" ")
             A+=1
         print()
+    print("===========")
 
 # Pattern 16
 '''
@@ -215,7 +227,8 @@ def pattern16(n):
             print(chr(A),end=" ")
         print()
         A+=1
-        
+    print("===========")
+
 def main():
     pattern1(3)
     pattern2(3)

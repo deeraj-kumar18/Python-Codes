@@ -42,8 +42,9 @@ testcases=[[1,7,8,6,4,2],[12, 35, 1, 10, 34, 1],[10,10],[1,5,4,8,2,7,3,2,10]]
 
 count=1
 for testcase in testcases:
-    print(f"Testcase {count}")
+    print(f"***** Testcase {count} *****")
     count+=1
     print(f"BruteForce Solution",second_largest_bruteforce(testcase))
     print(f"Better Solution",second_largest_better(testcase))
     print(f"Optimal Solution",second_largest_optimal(testcase)) 
+    print("======================")

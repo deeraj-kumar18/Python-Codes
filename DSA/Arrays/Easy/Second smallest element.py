@@ -12,4 +12,6 @@ def second_smallest_bruteforce(arr):
     return a[1]
 
 arr=[12, 35, 1, 10, 34, 1] 
-print(second_smallest_bruteforce(arr))
+arr1=[1,10,12,8]*10 
+arr2=[12, 35, 1, 7,8, 34, 1]
+print(second_smallest_bruteforce(arr),second_smallest_bruteforce(arr1),second_smallest_bruteforce(arr2))

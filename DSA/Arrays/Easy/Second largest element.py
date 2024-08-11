@@ -29,9 +29,9 @@ def second_largest_optimal(arr):
     second_largest=float('-inf')
     for i in range(1,len(arr)):
         if(arr[i]>largest):
-            second_largest=largest
+            second_largest=largest # when the element is greater than largest, then the current largest will be second largest.
             largest=arr[i]
-        elif(arr[i]<largest and arr[i]>second_largest):
+        elif(arr[i]<largest and arr[i]>second_largest): # if the number is not greater than largest but greater than second largest number
             second_largest=arr[i]
 
     return second_largest

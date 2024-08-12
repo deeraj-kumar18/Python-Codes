@@ -10,17 +10,27 @@ Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
 Explanation: Your function should return k = 5.
 '''
 def remove_duplicates(arr):
-    slow=0
-    fast=1
-    while fast<len(arr):
-        if arr[slow]==arr[fast]:
-            fast+=1
-        else:
-            arr[slow+1]=arr[fast]
-            fast+=1
-            slow+=1
+    # slow=0
+    # fast=1
+    # while fast<len(arr):
+    #     if arr[slow]==arr[fast]:
+    #         fast+=1
+    #     else:
+    #         arr[slow+1]=arr[fast]
+    #         fast+=1
+    #         slow+=1
     
+    # return slow+1
+
+    # FOR LOOP
+    slow=0
+    for fast in range(1,len(arr)):
+        if arr[slow]!=arr[fast]:
+            arr[slow+1]=arr[fast]
+            slow+=1
+            
     return slow+1
+
 
 # Initial Testing
 # arr=[0,0,1,1,1,2,2,3,3,4]

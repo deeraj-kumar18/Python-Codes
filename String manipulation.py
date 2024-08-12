@@ -21,3 +21,4 @@ def string_mani(s):
 
 print(string_mani("string"))
 print(string_mani("krishna"))
+print(string_mani("manishi"))

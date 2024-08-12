@@ -23,4 +23,20 @@ def program1(s):
             num=int(num_str)
             print(char*num,end="")
 
-program1("a5b10")
+# program1("a5b10")  Initial testing.
+# program1("a99")
+# TESTING.
+test_cases = [
+    "a2b3",
+    "c4d5",
+    "x1y2",
+    "a10b1c2",
+    "m3n12o5",
+    "a24b16"
+]
+def main():
+    for testcase in test_cases:
+        program1(testcase)
+        print()
+
+main()

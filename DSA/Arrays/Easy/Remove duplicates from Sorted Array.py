@@ -22,4 +22,6 @@ def remove_duplicates(arr):
     
     return slow+1
 
-
+# Initial Testing
+arr=[0,0,1,1,1,2,2,3,3,4]
+print(remove_duplicates(arr))

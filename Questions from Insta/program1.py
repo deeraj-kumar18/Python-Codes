@@ -32,7 +32,8 @@ test_cases = [
     "x1y2",
     "a10b1c2",
     "m3n12o5",
-    "a24b16"
+    "a24b16",
+    "a101"
 ]
 def main():
     for testcase in test_cases:

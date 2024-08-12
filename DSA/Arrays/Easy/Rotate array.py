@@ -17,3 +17,9 @@ Explanation:
 rotate 1 steps to the right: [99,-1,-100,3]
 rotate 2 steps to the right: [3,99,-1,-100]
 '''
+
+def rotate_array(arr,k):
+    k=k%len(arr)
+    arr[:]=arr[-k:]+arr[:-k]  # creating a copy using [:] 
+    return arr
+

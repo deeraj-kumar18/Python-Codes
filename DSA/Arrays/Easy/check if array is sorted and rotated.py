@@ -20,3 +20,15 @@ Output: true
 Explanation: [1,2,3] is the original sorted array.
 You can rotate the array by x = 0 positions (i.e. no rotation) to make nums.
 '''
+def is_sorted_and_rotated(arr,n):
+    count=0
+    for i in range(n):
+        if(arr[i]>arr[(i+1)%n]):
+            count+=1
+            if count>1:
+                return False
+
+    return True
+
+nums = [3,4,5,1,2]
+print(is_sorted_and_rotated(nums,len(nums)))

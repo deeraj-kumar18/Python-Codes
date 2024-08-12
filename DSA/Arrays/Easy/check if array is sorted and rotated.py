@@ -30,5 +30,19 @@ def is_sorted_and_rotated(arr,n):
 
     return True
 
-nums = [3,4,5,1,2]
-print(is_sorted_and_rotated(nums,len(nums)))
+# nums = [3,4,5,1,2]
+# TESTCASES
+test_cases = [
+    [3, 4, 5, 1, 2],  # Expected Output: True
+    [1, 2, 3, 4, 5],  # Expected Output: True
+    [2, 1, 3, 4, 5],  # Expected Output: False
+    [5, 1, 2, 3, 4],  # Expected Output: True
+    [4, 5, 6, 1, 2, 3],  # Expected Output: True
+    [1, 3, 2],  # Expected Output: False
+    [10, 20, 30, 40, 50, 5],  # Expected Output: True
+    [10, 20, 30, 40, 50],  # Expected Output: True
+    [3, 2, 1, 5, 4],  # Expected Output: False
+    [7, 9, 11, 12, 15],  # Expected Output: True
+]
+for testcase in test_cases:
+    print(is_sorted_and_rotated(testcase,len(testcase)))

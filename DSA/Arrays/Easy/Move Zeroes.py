@@ -24,4 +24,14 @@ and swaps it with first pointer.
 '''
 
 def move_zeroes(nums):
-    return
+    last_non_zero=0
+    j=0
+
+    while(j<len(nums)):
+        if nums[j]!=0:
+            nums[last_non_zero],nums[j]=nums[j],nums[last_non_zero]
+            last_non_zero+=1
+        j+=1
+
+    return nums
+

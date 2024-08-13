@@ -35,3 +35,7 @@ def move_zeroes(nums):
 
     return nums
 
+# Inital Testing
+arr=[0,1,0,3,12]
+print(move_zeroes(arr))
+

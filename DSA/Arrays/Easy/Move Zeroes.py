@@ -36,6 +36,11 @@ def move_zeroes(nums):
     return nums
 
 # Inital Testing
-arr=[0,1,0,3,12]
-print(move_zeroes(arr))
+# arr=[0,1,0,3,12]
+# print(move_zeroes(arr))
+
+# TESTCASES
+testcases=[[0,1,0,3,12],[0,0,1,2,0,3,4],[0,0,1,2,0,3,4],[4,0,0,2,0,1]]
+for testcase in testcases:
+    print(move_zeroes(testcase))
 

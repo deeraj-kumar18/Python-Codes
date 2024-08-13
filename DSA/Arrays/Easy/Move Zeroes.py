@@ -16,3 +16,12 @@ Constraints:
 1 <= nums.length <= 104
 -231 <= nums[i] <= 231 - 1
 '''
+
+# APPROACH
+'''
+Using Two pointers. One pointer points at zero and other pointer iterates over the list to find non zero element 
+and swaps it with first pointer.
+'''
+
+def move_zeroes(nums):
+    return

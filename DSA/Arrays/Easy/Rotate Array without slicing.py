@@ -10,7 +10,10 @@ rotate 1 steps to the right: [7,1,2,3,4,5,6]
 rotate 2 steps to the right: [6,7,1,2,3,4,5]
 rotate 3 steps to the right: [5,6,7,1,2,3,4]
 '''
-
+'''
+Time Complexity: O(k) + O(n-k) + O(k) 
+Space Complexity: O(k)
+'''
 # IDEA: To shift the k elements to a temporary array. And shifting the elements in their position.
 #  Place the elements of temp array back to main array.
 #  
@@ -53,7 +56,7 @@ test_cases = [
     ([1, 2, 3, 4, 5, 6], 2),      # Expected Output: [5, 6, 1, 2, 3, 4]
     ([1, 2, 3, 4, 5, 6], 8),      # Expected Output: [5, 6, 1, 2, 3, 4] (k > len(arr))
     ([1, 2, 3, 4, 5, 6], 10),     # Expected Output: [3, 4, 5, 6, 1, 2] (k > len(arr))
-    
+
 ]
 for testcase in test_cases:
     print(rotate_array(testcase[0],testcase[1]))

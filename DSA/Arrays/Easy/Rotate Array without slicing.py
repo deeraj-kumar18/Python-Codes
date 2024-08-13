@@ -15,4 +15,25 @@ rotate 3 steps to the right: [5,6,7,1,2,3,4]
 #  Place the elements of temp array back to main array.
 #  
 def rotate_array(nums,k):
-    return
+    n=len(nums)
+    k=k%n   # To manage the k values greater than n.
+
+    temp=[0]*k # Array of size k to store the elements which need to be moved.
+
+    #  Shifting k elements to the temp array.
+    for i in range(k):
+        temp[i]=nums[n-k+i]  
+    
+    # Shifting elements to their right position
+    i=k
+    j=0
+    while(i>=0):
+        nums[k+i]=nums[k-j]
+        j+=1
+        i-=1
+    
+    # Inserting elements of temp array to nums
+    for i in range(k):
+        nums[i]=temp[i]
+    
+    return nums

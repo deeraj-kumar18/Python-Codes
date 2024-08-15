@@ -227,6 +227,7 @@ def pattern16(n):
             print(chr(A),end=" ")
         print()
         A+=1
+    print("===========")
 
 # Pattern 21
 '''
@@ -242,6 +243,7 @@ def pattern21(n):
             print("*"*n)
         else:
             print("*" + " "*(n-2) + "*")
+    print("===========")
 
 
 def main():

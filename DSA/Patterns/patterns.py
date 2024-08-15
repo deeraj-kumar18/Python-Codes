@@ -216,6 +216,15 @@ def pattern16(n):
         print()
         A+=1
         
+# Pattern 21
+'''
+****
+*  *
+*  *
+****
+'''
+
+
 def main():
     pattern1(3)
     pattern2(3)

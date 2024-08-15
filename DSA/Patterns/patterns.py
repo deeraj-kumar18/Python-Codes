@@ -224,6 +224,7 @@ def pattern16(n):
 ****
 '''
 def pattern21(n):
+    print("Pattern 21")
     for i in range(n):
         if (i==0 or i==n-1):
             print("*"*n)
@@ -247,5 +248,6 @@ def main():
     pattern14(3)
     pattern15(3)
     pattern16(3)
+    pattern21(3)
 
 main()

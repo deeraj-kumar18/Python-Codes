@@ -227,7 +227,22 @@ def pattern16(n):
             print(chr(A),end=" ")
         print()
         A+=1
-    print("===========")
+
+# Pattern 21
+'''
+****
+*  *
+*  *
+****
+'''
+def pattern21(n):
+    print("Pattern 21")
+    for i in range(n):
+        if (i==0 or i==n-1):
+            print("*"*n)
+        else:
+            print("*" + " "*(n-2) + "*")
+
 
 def main():
     pattern1(3)
@@ -246,5 +261,6 @@ def main():
     pattern14(3)
     pattern15(3)
     pattern16(3)
+    pattern21(3)
 
 main()

@@ -29,3 +29,35 @@ Output:
 Explanation: 
 Distinct elements including both the arrays are: 1 2.
 '''
+
+def findUnion(arr1,arr2,n,m):
+    temp=[]
+    i,j=0,0
+    last_element=-1
+
+    while i<n and j<m:
+        if arr1[i]<=arr2[j]:
+            if last_element!=arr1[i]:
+                temp.append(arr1[i])
+                last_element=arr1[i]
+            i+=1
+        else:
+            if last_element!=arr2[j]:
+                temp.append(arr2[j])
+                last_element=arr2[j]
+            j+=1
+    
+    while i<n:
+        if last_element!=arr1[i]:
+            temp.append(arr1[i])
+            last_element=arr1[i]
+        i+=1
+    while j<m:
+        if last_element!=arr2[j]:
+            temp.append(arr2[j])
+            last_element=arr2[j]
+        j+=1
+    
+    return temp
+            
+        

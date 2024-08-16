@@ -61,9 +61,83 @@ def findUnion(arr1,arr2,n,m):
     return temp
             
 # INITIAL TESTING 
-n = 5 
-arr1 = [1, 1, 1, 1, 1]
-m = 5
-arr2 = [2, 2, 2, 2, 2]
-res=findUnion(arr1,arr2,n,m)
-print(res)
+# n = 5 
+# arr1 = [1, 1, 1, 1, 1]
+# m = 5
+# arr2 = [2, 2, 2, 2, 2]
+# res=findUnion(arr1,arr2,n,m)
+# print(res)
+
+test_cases = [
+    # Test case 1: Basic test case with distinct elements
+    {
+        "n": 5,
+        "arr1": [1, 2, 3, 4, 5],
+        "m": 5,
+        "arr2": [1, 2, 3, 6, 7],
+        "expected_output": [1, 2, 3, 4, 5, 6, 7]
+    },
+    # Test case 2: Arrays with duplicates and overlapping elements
+    {
+        "n": 5,
+        "arr1": [2, 2, 3, 4, 5],
+        "m": 5,
+        "arr2": [1, 1, 2, 3, 4],
+        "expected_output": [1, 2, 3, 4, 5]
+    },
+    # Test case 3: Completely distinct arrays
+    {
+        "n": 5,
+        "arr1": [1, 1, 1, 1, 1],
+        "m": 5,
+        "arr2": [2, 2, 2, 2, 2],
+        "expected_output": [1, 2]
+    },
+    # Test case 4: Identical arrays
+    {
+        "n": 4,
+        "arr1": [1, 3, 5, 7],
+        "m": 4,
+        "arr2": [1, 3, 5, 7],
+        "expected_output": [1, 3, 5, 7]
+    },
+    # Test case 5: One array is empty
+    {
+        "n": 0,
+        "arr1": [],
+        "m": 3,
+        "arr2": [2, 4, 6],
+        "expected_output": [2, 4, 6]
+    },
+    # Test case 6: Both arrays are empty
+    {
+        "n": 0,
+        "arr1": [],
+        "m": 0,
+        "arr2": [],
+        "expected_output": []
+    },
+    # Test case 7: One element in each array
+    {
+        "n": 1,
+        "arr1": [1],
+        "m": 1,
+        "arr2": [2],
+        "expected_output": [1, 2]
+    },
+    # Test case 8: Arrays with negative numbers
+    {
+        "n": 4,
+        "arr1": [-3, -2, -1, 0],
+        "m": 4,
+        "arr2": [-1, 0, 1, 2],
+        "expected_output": [-3, -2, -1, 0, 1, 2]
+    }
+]
+
+# Example of how to use the test cases
+for i, test in enumerate(test_cases):
+    n, arr1, m, arr2 = test["n"], test["arr1"], test["m"], test["arr2"]
+    output = findUnion(arr1, arr2, n, m)
+    assert output == test["expected_output"], f"Test case {i+1} failed: expected {test['expected_output']}, got {output}"
+    print(f"Test case {i+1} passed")

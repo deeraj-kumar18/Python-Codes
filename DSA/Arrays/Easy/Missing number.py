@@ -23,5 +23,32 @@ def missing_number(nums):
 
     return summation-summ
 
-nums= [9,6,4,2,3,5,7,0,1,10,12,11]
-print(missing_number(nums))
+#  INITIAL TESTING
+# nums= [9,6,4,2,3,5,7,0,1,10,12,11]
+# print(missing_number(nums))
+
+# MULTIPLE TESTCASES
+test_cases = [
+    # Test case 1: Basic case with a small array
+    [3, 0, 1],  # Expected output: 2
+    # Test case 2: Missing number is the last one in the range
+    [0, 1],  # Expected output: 2
+    # Test case 3: Larger array with a missing number in the middle
+    [9, 6, 4, 2, 3, 5, 7, 0, 1],  # Expected output: 8
+    # Test case 4: Missing number is 0
+    [1, 2, 3, 4, 5],  # Expected output: 0
+    # Test case 5: Array with the maximum size allowed, missing the last number
+    list(range(1, 10001)),  # Expected output: 0
+    # Test case 6: Array with the maximum size allowed, missing the first number
+    list(range(10001))[1:],  # Expected output: 10000
+    # Test case 7: Array with a random missing number
+    [0, 1, 2, 3, 5],  # Expected output: 4
+    # Test case 8: Single element, 0 missing
+    [1],  # Expected output: 0
+    # Test case 9: Single element, 1 missing
+    [0],  # Expected output: 1
+    # Test case 10: Array with all elements except one random middle value
+    [0, 1, 3, 4, 5],  # Expected output: 2
+]
+for testcase in test_cases:
+    print("Missing number is :",missing_number(testcase))

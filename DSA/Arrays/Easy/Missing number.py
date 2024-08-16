@@ -15,3 +15,13 @@ Input: nums = [9,6,4,2,3,5,7,0,1]
 Output: 8
 Explanation: n = 9 since there are 9 numbers, so all numbers are in the range [0,9]. 8 is the missing number in the range since it does not appear in nums.
 '''
+
+def missing_number(nums):
+    no_of_elements=len(nums)
+    summation= (no_of_elements*(no_of_elements+1))//2
+    summ=sum(nums)
+
+    return summation-summ
+
+nums= [9,6,4,2,3,5,7,0,1,10,12,11]
+print(missing_number(nums))

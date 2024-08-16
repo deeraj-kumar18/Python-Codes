@@ -20,3 +20,17 @@ Exlpanation: Since, 2 is not present
 in the array, output is -1.
 
 '''
+def searchInSorted(arr, K):
+        #Your code here
+        # if K in arr:
+        #     return 1
+        # else:
+        #     return -1
+        for i in arr:
+            if i == K:
+                return 1
+        return -1
+
+K = 2
+arr=[1,3,4,5,6]
+print(searchInSorted(arr,K))

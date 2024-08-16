@@ -60,4 +60,10 @@ def findUnion(arr1,arr2,n,m):
     
     return temp
             
-        
+# INITIAL TESTING 
+n = 5 
+arr1 = [1, 1, 1, 1, 1]
+m = 5
+arr2 = [2, 2, 2, 2, 2]
+res=findUnion(arr1,arr2,n,m)
+print(res)

@@ -36,3 +36,5 @@ def repeatedCharacter(S):
 
 s="abccbaacz"
 print(repeatedCharacter(s))
+s1="abcdd"
+print(repeatedCharacter(s1))

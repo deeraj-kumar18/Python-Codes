@@ -9,4 +9,13 @@ Define a recursive function isEven corresponding to this description. The functi
 accept a single parameter (a positive, whole number) and return a Boolean.
 '''
 def isevenOrodd(N):
-    return
+    N = abs(N)
+    if N == 0:
+        return "Even"
+    if N == 1:
+        return "Odd"
+    
+    return isevenOrodd(N-2)
+
+N=55
+print(isevenOrodd(N))

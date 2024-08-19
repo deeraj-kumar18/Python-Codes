@@ -10,12 +10,12 @@ accept a single parameter (a positive, whole number) and return a Boolean.
 '''
 def isevenOrodd(N):
     N = abs(N)
-    if N == 0:
+    if N == 0: #Base Case
         return "Even"
-    if N == 1:
+    if N == 1: #Base Case
         return "Odd"
     
-    return isevenOrodd(N-2)
+    return isevenOrodd(N-2) #Recursive Call
 
 # Initial Testing
 N=55
@@ -40,3 +40,6 @@ test_cases = [
 ]
 for testcase in test_cases:
     print(isevenOrodd(testcase))
+
+# OBSERVATION
+# This code breaks for numbers which might break the recursion depth of python code i.e 1000.

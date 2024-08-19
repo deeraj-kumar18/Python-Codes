@@ -17,5 +17,26 @@ def isevenOrodd(N):
     
     return isevenOrodd(N-2)
 
+# Initial Testing
 N=55
 print(isevenOrodd(N))
+
+# Testcases
+test_cases = [
+    0,     # Test with zero
+    1,     # Smallest odd number
+    2,     # Smallest even number
+    -1,    # Negative odd number
+    -2,    # Negative even number
+    999,   # Large odd number
+    1000,  # Large even number
+    -999,  # Large negative odd number
+    -1000, # Large negative even number
+    # 12345, # Random odd number
+    # 10001, # Odd number just over 10000
+    # 10000, # Even number exactly 10000
+    # -54321,# Large negative odd number
+    # 87654  # Large even number
+]
+for testcase in test_cases:
+    print(isevenOrodd(testcase))

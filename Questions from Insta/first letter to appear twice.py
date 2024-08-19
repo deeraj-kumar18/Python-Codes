@@ -26,3 +26,13 @@ Constraints:
 s consists of lowercase English letters.
 s has at least one repeated letter.
 '''
+def repeatedCharacter(S):
+    seen=[]
+    for char in S:
+        if char in seen:
+            return char
+        else:
+            seen.append(char)
+
+s="abccbaacz"
+print(repeatedCharacter(s))

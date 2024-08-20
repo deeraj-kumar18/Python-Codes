@@ -43,3 +43,25 @@ test_str = "geeksforgeeks"
 s1 = "geeks"
 s2 = "abcd"
 print(replace1(test_str,s1,s2))
+
+# USING ITERATION
+'''
+Time complexity: O(nm), where n is the length of the input string and m is the length of the substring to be replaced. 
+Auxiliary space: O(n), since we are creating a new string to store the result.
+'''
+def replace_substring(test_str,s1,s2):
+    result=""
+    i=0
+    while i<len(test_str):
+        if test_str[i:i+len(s1)] == s1:
+            result+=s2
+            i+=len(s1)
+        else:
+            result+=test_str[i]
+            i+=1
+    return result
+
+test_str = "geeksforgeeks"
+s1 = "geeks"
+s2 = "abcd"
+print(replace_substring(test_str,s1,s2))

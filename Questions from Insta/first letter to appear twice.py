@@ -26,7 +26,6 @@ Constraints:
 s consists of lowercase English letters.
 s has at least one repeated letter.
 '''
-
 "lets add some code"
 def repeatedCharacter(S):
     seen=[]

@@ -31,3 +31,19 @@ def singleNumber(nums):
 
 nums = [4,1,2,1,2]
 print(singleNumber(nums))
+
+# USING DICTIONARY
+def singleNumber1(nums):
+    dict={}
+    for i in nums:
+        if i in dict:
+            dict[i]+=1
+        else:
+            dict[i]=1
+    
+    for k,v in dict.items():
+        if v==1:
+            return k
+        
+nums = [4,1,2,1,2]
+print(singleNumber1(nums))

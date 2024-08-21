@@ -1,5 +1,5 @@
 '''
-485. Max Consecutive Ones
+485. Max Consecutive Ones https://leetcode.com/problems/max-consecutive-ones/
 Given a binary array nums, return the maximum number of consecutive 1's in the array.
 
 Example 1:

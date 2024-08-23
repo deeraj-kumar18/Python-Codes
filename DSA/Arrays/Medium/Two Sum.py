@@ -43,4 +43,18 @@ result=twosum(nums,target)
 print(result)
 
 # OPTIMAL SOLUTION
-def twosum1():
+def twosum1(nums,target):
+    dict={}
+    for i,num in enumerate(nums):
+        diff = target - num
+        if diff in dict:
+            return [i,dict[num]]
+
+        dict[num]=i
+    
+nums = [2,7,11,15]
+nums = [1,3,34,7,11,23]
+target = 9
+target = 18
+result=twosum(nums,target)
+print(result)

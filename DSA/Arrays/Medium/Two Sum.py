@@ -44,7 +44,7 @@ def twosum(nums,target):
 # print(result)
 
 # Testing with testcases
-testcases=[([2,7,11,15],9),([1,3,34,7,11,23],18)]
+testcases=[([2,7,11,15],9),([1,3,34,7,11,23],18),([3,2,4],6),([3,3],6)]
 print("Brute Force Solution")
 for testcase in testcases:
     print(twosum(testcase[0],testcase[1]))
@@ -62,7 +62,8 @@ def twosum1(nums,target):
     for i,num in enumerate(nums):
         diff = target - num
         if diff in dict:
-            return [i,dict[num]]
+            # print(dict)
+            return [dict[diff],i]
 
         dict[num]=i
     
@@ -70,12 +71,12 @@ def twosum1(nums,target):
 # nums = [2,7,11,15]
 # nums = [1,3,34,7,11,23]
 # target = 9
-# target = 18
+# target = 18   
 # result=twosum(nums,target)
 # print(result)
 
 # Testing with testcases
-testcases=[([2,7,11,15],9),([1,3,34,7,11,23],18)]
+testcases=[([2,7,11,15],9),([1,3,34,7,11,23],18),([3,2,4],6),([3,3],6)]
 print("Optimal Solution")
 for testcase in testcases:
-    print(twosum(testcase[0],testcase[1]))
+    print(twosum1(testcase[0],testcase[1]))

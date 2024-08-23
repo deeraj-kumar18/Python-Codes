@@ -43,6 +43,12 @@ result=twosum(nums,target)
 print(result)
 
 # OPTIMAL SOLUTION
+# we iterate through the list and 
+# we find the difference between the target and current number
+# We are storing the number and its index in a dictionary,
+#  if we find the diff in dict, we found the complimenting value of current number to get the
+#  sum as target number. hence we return the indices.
+#  else we add the current number as key and its index as value into the dictionary. 
 def twosum1(nums,target):
     dict={}
     for i,num in enumerate(nums):

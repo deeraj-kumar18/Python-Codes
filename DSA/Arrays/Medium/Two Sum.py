@@ -35,12 +35,20 @@ def twosum(nums,target):
             if nums[i]+nums[j]==target:
                 return [i,j]
 
-nums = [2,7,11,15]
-nums = [1,3,34,7,11,23]
-target = 9
-target = 18
-result=twosum(nums,target)
-print(result)
+# Initial Testing
+# nums = [2,7,11,15]
+# nums = [1,3,34,7,11,23]
+# target = 9
+# target = 18
+# result=twosum(nums,target)
+# print(result)
+
+# Testing with testcases
+testcases=[([2,7,11,15],9),([1,3,34,7,11,23],18)]
+print("Brute Force Solution")
+for testcase in testcases:
+    print(twosum(testcase[0],testcase[1]))
+
 
 # OPTIMAL SOLUTION
 # we iterate through the list and 
@@ -58,9 +66,16 @@ def twosum1(nums,target):
 
         dict[num]=i
     
-nums = [2,7,11,15]
-nums = [1,3,34,7,11,23]
-target = 9
-target = 18
-result=twosum(nums,target)
-print(result)
+# Initial Testing
+# nums = [2,7,11,15]
+# nums = [1,3,34,7,11,23]
+# target = 9
+# target = 18
+# result=twosum(nums,target)
+# print(result)
+
+# Testing with testcases
+testcases=[([2,7,11,15],9),([1,3,34,7,11,23],18)]
+print("Optimal Solution")
+for testcase in testcases:
+    print(twosum(testcase[0],testcase[1]))

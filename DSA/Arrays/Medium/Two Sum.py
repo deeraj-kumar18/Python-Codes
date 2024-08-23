@@ -43,4 +43,4 @@ result=twosum(nums,target)
 print(result)
 
 # OPTIMAL SOLUTION
-def twosum1()
+def twosum1():

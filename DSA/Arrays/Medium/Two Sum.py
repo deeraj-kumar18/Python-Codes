@@ -26,6 +26,8 @@ Constraints:
 Only one valid answer exists.
 '''
 # BRUTE FORCE SOLUTION
+# Iterate the list using two loops and return the indices if the calculated sum of two elements 
+# is equal to target.
 def twosum(nums,target):
     n=len(nums)
     for i in range(n):
@@ -39,3 +41,6 @@ target = 9
 target = 18
 result=twosum(nums,target)
 print(result)
+
+# OPTIMAL SOLUTION
+def twosum1()

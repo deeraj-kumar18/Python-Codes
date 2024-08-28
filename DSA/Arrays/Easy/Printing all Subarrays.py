@@ -13,7 +13,7 @@ def printSubarrays1(arr):
         subarray=[]
         for end in range(start,len(arr)):
             subarray.append(arr[end])
-            print(subarray)
+            print(*subarray) # Learnt something new today. where * is the unpacking operator that turns a list into positional arguments
 
-arr=[1,2,3]
+arr=[1,2,3,4]
 printSubarrays1(arr)

@@ -19,7 +19,7 @@ n == nums.length
 1 <= n <= 300
 nums[i] is either 0, 1, or 2.
 '''
-# Brute Force Approach
+# Brute Force Solution
 '''
 Sort using any sorting technique. Preferably with less time complexity.
 ex. Merge Sort O(n log n) , O(n)'''
@@ -32,5 +32,34 @@ def sort_bruteforce(arr):
                 arr[j],arr[j+1]=arr[j+1],arr[j]
     print(arr)
 
-a=[1,5,6,4,2,7,8,0,9]
+a=[0,1,0,2,0,1,0,2,0,1,0,2,0,1,0,2,0,1,0,1,0,1,0,2,0]
 sort_bruteforce(a)
+
+# Better Solution 
+'''
+The intuition is simple, we iterate over the array and count the number of 0,1,2s. 
+then iterate over the counts of individual numbers and overwrite the values in the list with 
+respective 0,1,2.
+'''
+def sort_better(arr):
+    count0,count1,count2=0,0,0
+    for i in arr:
+        if i == 0:
+            count0+=1
+        elif i == 1:
+            count1+=1
+        else:
+            count2+=1
+    
+    for i in range(count0):
+        arr[i]=0
+    
+    for i in range(count1):
+        arr[i+count0]=1
+    
+    for i in range(count2):
+        arr[i+count0+count1]=2
+    
+    print(arr)
+
+sort_better(a)

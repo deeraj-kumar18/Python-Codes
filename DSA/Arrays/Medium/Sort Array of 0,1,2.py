@@ -40,6 +40,7 @@ sort_bruteforce(a)
 The intuition is simple, we iterate over the array and count the number of 0,1,2s. 
 then iterate over the counts of individual numbers and overwrite the values in the list with 
 respective 0,1,2.
+Time Complexity: O(2N) Space Complexity: O(1)
 '''
 def sort_better(arr):
     count0,count1,count2=0,0,0

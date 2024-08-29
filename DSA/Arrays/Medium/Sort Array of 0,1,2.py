@@ -19,3 +19,18 @@ n == nums.length
 1 <= n <= 300
 nums[i] is either 0, 1, or 2.
 '''
+# Brute Force Approach
+'''
+Sort using any sorting technique. Preferably with less time complexity.
+ex. Merge Sort O(n log n) , O(n)'''
+def sort_bruteforce(arr):
+    # Using Bubble Sort
+    n=len(arr)
+    for i in range(n):
+        for j in range(n-i-1):
+            if arr[j]>arr[j+1]:
+                arr[j],arr[j+1]=arr[j+1],arr[j]
+    print(arr)
+
+a=[1,5,6,4,2,7,8,0,9]
+sort_bruteforce(a)

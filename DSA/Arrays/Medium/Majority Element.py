@@ -47,11 +47,13 @@ Space Complexity: O(N) as we are using a map data structure.
 '''
 from collections import Counter
 def majority_better(arr):
+    # Count the occurrences of each element using Counter
     counter=Counter(arr)
 
+    # Searching for the majority element
     for num,counter in counter.items():
         if counter>len(arr)//2:
             return num
-    return -1
+    return -1   
 
 print(majority_better(nums))

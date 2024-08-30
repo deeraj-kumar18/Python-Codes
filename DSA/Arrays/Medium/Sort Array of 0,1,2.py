@@ -64,3 +64,29 @@ def sort_better(arr):
     print(arr)
 
 sort_better(a)
+
+# Optimal Approach
+'''
+Dutch National Flag Approach
+This algorithm contains 3 pointers i.e. low, mid, and high, and 3 main rules.  The rules are the following:
+arr[0….low-1] contains 0. [Extreme left part]
+arr[low….mid-1] contains 1.
+arr[high+1….n-1] contains 2. [Extreme right part], n = size of the array
+'''
+def sort_optimal(arr):
+    low,mid,high=0,0,len(arr)-1
+    while mid<=high:
+        if arr[mid]==0:
+            arr[mid],arr[low]=arr[low],arr[mid]
+            low+=1
+            mid+=1
+        
+        elif arr[mid]==1:
+            mid+=1
+        
+        else:
+            arr[mid],arr[high]=arr[high],arr[mid]
+            high-=1
+    print(arr)
+
+sort_optimal(a)

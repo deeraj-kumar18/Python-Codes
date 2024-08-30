@@ -17,3 +17,20 @@ n == nums.length
 1 <= n <= 5 * 104
 -109 <= nums[i] <= 109
 '''
+# BruteForce Approach 
+'''
+iterate two loops and count the occurance each time, if occurance is 
+greater than n//2, we return the number.
+'''
+def majority_brute(arr):
+    for i in range(len(arr)):
+        count=0
+        for j in range(len(arr)):
+            if arr[i]==arr[j]:
+                count+=1
+            
+        if count>len(arr)//2:
+            return arr[i]
+
+nums =[2,2,1,1,1,1,1,2,2,3,3,3,3,3,3,3,3,3,3]
+print(majority_brute(nums))

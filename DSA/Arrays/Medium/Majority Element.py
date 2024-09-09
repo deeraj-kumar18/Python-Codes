@@ -80,16 +80,25 @@ Space complexity:
 The algorithm uses only a constant amount of additional space for storing variables. Hence, the space complexity is O(1).
 '''
 def majority_optimal(nums):
+    # Initialize count and majority candidate
     count=0
     majority_element=0
 
+    
+    # Traverse through the list
     for i in range(len(nums)):
         if count==0 and majority_element!=nums[i]:
+            # If count is 0 and majority candidate is different from current element,
+            # update the majority candidate and set count to 1
             majority_element=nums[i]
             count+=1
         elif majority_element==nums[i]:
+            # If current element is the same as the majority candidate,
+            # increment the count
             count+=1
         else:
+            # If current element is different from the majority candidate,
+            # decrement the count
             count-=1
     
     return majority_element

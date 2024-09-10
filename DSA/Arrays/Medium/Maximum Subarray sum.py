@@ -22,3 +22,26 @@ Constraints:
 1 <= nums.length <= 105
 -104 <= nums[i] <= 104
  '''
+# BruteForce Approach
+'''
+Use 2 for loops and calculate the sum and compare it with maximum sum. 
+Time Complexity: O(n^2)
+Space Complexity: O(1)
+'''
+def max_subarray_sum(nums):
+    max_sum=float('-inf')
+    for i in range(len(nums)):
+        for j in range(i+1,len(nums)+1):
+            sum1=sum(nums[i:j])
+            if sum1>=max_sum:
+                max_sum=sum1
+    return max_sum
+
+nums=[-2,1,-3,4,-1,2,1,-5,4]
+print(max_subarray_sum(nums))
+
+# Optimal Approach
+'''
+Kadane's Algorithm
+
+'''

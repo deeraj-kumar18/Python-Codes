@@ -43,5 +43,21 @@ print(max_subarray_sum(nums))
 # Optimal Approach
 '''
 Kadane's Algorithm
-
+Our goal is to iterate over the list only once to achieve time complexity of O(N)
+We iterate over the array adding each element to our sum variable and check if the sum is greater 
+than max_sum, if yes, we update the max_sum. If sum is less than 0, then we update the sum to 0.
+after iterating throughout the list, we will have the maximum sum in our variable, we will return that. 
 '''
+def max_subarray_sum_opt(nums):
+    max_sum=0
+    summ=0
+    for i in range(len(nums)):
+        summ+=nums[i]
+        if summ > max_sum:
+            max_sum=summ
+        if summ<0:
+            summ=0
+    
+    return max_sum
+
+print(max_subarray_sum_opt(nums))

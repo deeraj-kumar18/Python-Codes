@@ -27,7 +27,6 @@ Constraints:
  array and compare the difference between the elements and profit. if it is greater, we update the profit.
  return profit. 
 '''
-
 def best_time(prices):
     profit=0
     for i in range(len(prices)):
@@ -43,7 +42,7 @@ def best_time(prices):
 prices = [7,1,5,3,6,4,9]
 print(best_time(prices))
 
-# Better Approach
+# Better Approach 1
 '''
 TC: O(N) SC:O(1)
 Approach: Iterate over the loop only once and compare the max_profit starting from index 1,
@@ -59,3 +58,29 @@ def best_time_better(prices):
     return max_profit
 
 print(best_time_better(prices))
+
+# Better Approach 2
+'''
+TC: O(N) SC:O(1)
+Approach: Two Pointer approach. We start left pointer at 0 and right pointer at 1 and declare a variable max profit.
+we iterate till right pointer reaches the end of the list. 
+We calculate the profit by subtracting values of arr[l] and arr[r]. if profit is higher than max profit, 
+we update the max profit with current profit. 
+if arr[l] is greater than arr[r], we update l with r value. this is because , for us to sell a stock 
+and get profit, we need to buy it at lower price and sell it at higher price. if price at left is higher, 
+then we update it with lesser value that is at right. 
+'''
+def best_time_better1(prices):
+    left,right=0,1
+    max_profit=0
+    while right<len(prices):
+        profit=prices[right]-prices[left]
+        if profit>max_profit:
+            max_profit=profit
+        if prices[left]>prices[right]:
+            left=right
+        
+        right+=1
+    return max_profit
+
+print(best_time_better1(prices))

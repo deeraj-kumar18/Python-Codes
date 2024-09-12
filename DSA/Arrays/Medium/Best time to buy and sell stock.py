@@ -43,3 +43,19 @@ def best_time(prices):
 prices = [7,1,5,3,6,4,9]
 print(best_time(prices))
 
+# Better Approach
+'''
+TC: O(N) SC:O(1)
+Approach: Iterate over the loop only once and compare the max_profit starting from index 1,
+ updating the minimum price after each iteration over individual element.
+'''
+def best_time_better(prices):
+    mini_element=prices[0]
+    max_profit=0
+    for i in range(1,len(prices)):
+        max_profit=max(max_profit,prices[i]-mini_element)
+        mini_element=min(mini_element,prices[i])
+    
+    return max_profit
+
+print(best_time_better(prices))

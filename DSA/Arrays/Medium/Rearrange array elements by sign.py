@@ -1,5 +1,5 @@
 '''
-2149. Rearrange Array Elements by Sign
+2149. Rearrange Array Elements by Sign   https://leetcode.com/problems/rearrange-array-elements-by-sign/description/
 Medium
 Topics
 Companies
@@ -39,3 +39,35 @@ nums.length is even
 1 <= |nums[i]| <= 105
 nums consists of equal number of positive and negative integers.
 '''
+# Brute Force Approach
+'''
+Iterate over the loop,store the positive elements in a seperate list and negative elements 
+in a separate list. Replace the elements in original array based on indices.
+TC: O(N)+O(N) 
+SC: O(N/2)+O(N/2)'''
+def arrange_elements(arr):
+    pos,neg=[],[]
+    for num in arr:
+        if num>0:
+            pos.append(num)
+        elif num<0:
+            neg.append(num)
+    
+    i=0
+    j=0
+    while j<len(nums)//2:
+        arr[i]=pos[j]
+        j+=1
+        i+=2
+    
+    i=1
+    j=0
+    while j<len(nums)//2:
+        arr[i]=neg[j]
+        j+=1
+        i+=2
+    
+    print(arr)
+
+nums = [3,1,-2,-5,2,-4]
+arrange_elements(nums)

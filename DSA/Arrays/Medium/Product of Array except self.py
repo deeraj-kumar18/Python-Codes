@@ -20,3 +20,27 @@ Constraints:
 -30 <= nums[i] <= 30
 The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
 '''
+# BruteForce Approach 
+'''
+Approach: Iterating the list using two for loops and calculating the product.
+TC: O(N^2)
+SC: O(N)
+'''
+def productExceptSelf(nums):
+    ans=[]
+    for i in range(len(nums)):
+        prod=1
+        for j in range(len(nums)):
+            if i==j:
+                continue
+            else:
+                prod*=nums[j]
+        ans.append(prod)
+    
+    return ans
+
+testcases=[[1,2,3,4],[-1,1,0,-3,3]]
+for testcase in testcases:
+    print(productExceptSelf(testcase))
+
+# Does not work for large testcases as we are iterating twice. 

@@ -38,3 +38,16 @@ def containsDuplicate(nums):
 nums = [1,1,1,3,3,4,3,2,4,2]
 print(containsDuplicate(nums))
 
+# Approach 2
+# Using Sets
+def containsDuplicate1(nums):
+    ans=set()
+    for i in nums:
+        if i in ans:
+            return True
+        else:
+            ans.add(i)
+    
+    return False
+
+print(containsDuplicate1(nums))

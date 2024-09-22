@@ -71,3 +71,24 @@ def arrange_elements(arr):
 
 nums = [3,1,-2,-5,2,-4]
 arrange_elements(nums)
+
+# Better Approach
+'''
+In this approach, we aim to complete the task in one pass reducing our TC from O(2N) to O(N)
+TC: O(N)
+SC: O(N)
+'''
+def arrange_elements1(arr):
+    ans=[0]*len(nums)
+    pos,neg=0,1
+    for i in range(len(arr)):
+        # print(i)
+        if arr[i]>0:
+            ans[pos]=arr[i]
+            pos+=2
+        else:
+            ans[neg]=arr[i]
+            neg+=2
+    print(ans)
+
+arrange_elements1(nums)

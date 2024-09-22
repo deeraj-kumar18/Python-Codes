@@ -44,3 +44,5 @@ for testcase in testcases:
     print(productExceptSelf(testcase))
 
 # Does not work for large testcases as we are iterating twice. 
+
+# Optimal Approach 

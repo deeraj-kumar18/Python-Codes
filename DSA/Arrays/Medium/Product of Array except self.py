@@ -46,3 +46,33 @@ for testcase in testcases:
 # Does not work for large testcases as we are iterating twice. 
 
 # Optimal Approach 
+'''
+We create two arrays to calculate left product and right product of that element 
+we multiply them back to get the answer.
+TC:O(N)
+SC:O(N)
+'''
+def productExceptSelf1(nums):
+    l_mult=1
+    r_mult=1
+    n=len(nums)
+    l_arr=[0]*n
+    r_arr=[0]*n
+
+    for i in range(n):
+        j=-i-1
+        l_arr[i]=l_mult
+        r_arr[j]=r_mult
+        l_mult*=nums[i]
+        r_mult*=nums[j]
+
+    ans=[0]*n
+    for i in range(n):
+        ans[i]=l_arr[i]*r_arr[i]
+
+    return ans    
+
+
+testcases=[[1,2,3,4],[-1,1,0,-3,3]]
+for testcase in testcases:
+    print(productExceptSelf1(testcase))

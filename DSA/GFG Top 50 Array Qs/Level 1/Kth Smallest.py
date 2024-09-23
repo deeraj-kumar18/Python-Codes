@@ -36,3 +36,5 @@ def kthSmallest(arr,k):
 arr = [7, 10, 4, 3, 20, 15]
 k = 3
 print(kthSmallest(arr,k))
+
+# But we need to solve it in O(N) time. We can do it using Heaps 

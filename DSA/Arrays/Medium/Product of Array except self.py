@@ -76,3 +76,25 @@ def productExceptSelf1(nums):
 testcases=[[1,2,3,4],[-1,1,0,-3,3]]
 for testcase in testcases:
     print(productExceptSelf1(testcase))
+
+# similar approach 
+def productExceptSelf2(self, nums):
+    n = len(nums)
+            
+    left = [1] * n
+    right = [1] * n
+    result = [1] * n
+
+    # Fill left array
+    for i in range(1, n):
+        left[i] = left[i - 1] * nums[i - 1]
+
+    # Fill right array
+    for i in range(n - 2, -1, -1):
+        right[i] = right[i + 1] * nums[i + 1]
+
+    # Fill result array
+    for i in range(n):
+        result[i] = left[i] * right[i]
+
+    return result

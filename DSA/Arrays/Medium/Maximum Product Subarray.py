@@ -61,3 +61,32 @@ def maxProduct1(nums):
 for testcase in testcases:
     print(maxProduct1(testcase))
 # Does not work for all large testcases.
+
+# Optimal Solution
+'''
+We try to solve it in O(N) TC.
+Approach:
+We calculate prefix(from front) and suffix (from back) product for each element and return the maximum product we 
+encounter while traversing the array.
+TC: O(N)
+SC: O(1)
+'''
+def maxProduct2(nums):
+    n=len(nums)
+    pref=1
+    suff=1
+    maxi=float('-inf')
+    for i in range(n):
+        if pref==0:  # Case when we encounter a Zero in the array, then the product will become zero, so we make it back to 1
+            pref=1
+        if suff==0:
+            suff=1 
+        
+        pref*=nums[i]
+        suff*=nums[n-i-1]
+        maxi=max(maxi,max(pref,suff))
+    
+    return maxi
+
+for testcase in testcases:
+    print(maxProduct2(testcase))

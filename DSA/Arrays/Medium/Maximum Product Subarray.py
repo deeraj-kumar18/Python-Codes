@@ -21,7 +21,8 @@ Constraints:
 The product of any subarray of nums is guaranteed to fit in a 32-bit integer.
 '''
 # BruteForce Approach 
-''' Create all subarrays and find the maximum product. 
+''' 
+Create all subarrays and find the maximum product. 
 TC: O(N^3)
 SC: O(1)
 '''
@@ -37,7 +38,26 @@ def maxProduct(nums):
     return max_prod
 
 testcases=[[2,3,-2,4],[-2,0,-1]]
-for testcase in testcases:
-    print(maxProduct(testcase))
-    
+for testcase in testcases: 
+    print(maxProduct(testcase)) 
 # Does not work for large testcases.
+
+# Better Approach
+'''
+Create all subarrays and find the maximum product in the second loop itself. 
+TC: O(N^2)
+SC: O(1)
+'''
+def maxProduct1(nums):
+    max_prod=float('-inf')
+    for i in range(len(nums)):
+        prod=1
+        for j in range(i,len(nums)):
+            prod*=nums[j]
+            max_prod=max(prod,max_prod)
+        
+    return max_prod
+
+for testcase in testcases:
+    print(maxProduct1(testcase))
+# Does not work for all large testcases.

@@ -46,3 +46,23 @@ def leaders(arr):
 testcases= [[16,17,4,3,5,2],[10,4,2,4,1],[5, 10, 20, 40],[30, 10, 10, 5]]
 for test in testcases:
     print(leaders(test))
+
+# Optimal Approach 
+'''
+Iterate the array from behind and append the maximum number to ans list by comparing it with the current element.
+TC: O(N)
+SC: O(N)
+'''
+def leaders1(arr):
+    maxi=float('-inf')
+    ans=[]
+    for i in range(len(arr)-1,-1,-1):
+        if arr[i]>=maxi:
+            ans.append(arr[i])
+        maxi=max(maxi,arr[i])
+    
+    return (ans[::-1])
+
+print()
+for test in testcases:
+    print(leaders1(test))

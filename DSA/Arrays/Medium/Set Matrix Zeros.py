@@ -18,3 +18,48 @@ n == matrix[0].length
 1 <= m, n <= 200
 -231 <= matrix[i][j] <= 231 - 1
 '''
+# BruteForce Approach
+'''
+Approach: We iterate over the matrix and if we encounter a 0 then we mark the row and col with -1.
+why -1? because if we mark it zero directly, then we can end up marking the wrong rows and colums when we encounter a zero in future.
+after completely iterating over the array, we iterate over it once again and if we find a -1, then we mark it as 0. we return the matrix.
+
+TC: O(n*m)*O(n+m) == O(N^3)
+SC: O(1)
+'''
+def markRow(matrix, n, m, i):
+    # set all non-zero elements as -1 in the row i:
+    for j in range(m):
+        if matrix[i][j] != 0:
+            matrix[i][j] = -1
+
+def markCol(matrix, n, m, j):
+    # set all non-zero elements as -1 in the col j:
+    for i in range(n):
+        if matrix[i][j] != 0:
+            matrix[i][j] = -1
+
+def zeroMatrix(matrix, n, m):
+    # Set -1 for rows and cols
+    # that contains 0. Don't mark any 0 as -1:
+    for i in range(n):
+        for j in range(m):
+            if matrix[i][j] == 0:
+                markRow(matrix, n, m, i)
+                markCol(matrix, n, m, j)
+    
+    # Finally, mark all -1 as 0:
+    for i in range(n):
+        for j in range(m):
+            if matrix[i][j] == -1:
+                matrix[i][j] = 0
+    
+    return matrix
+
+
+matrix = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]
+ans=(zeroMatrix(matrix,len(matrix),len(matrix[0])))
+for row in ans:
+    for ele in row:
+        print(ele,end=" ")
+    print()

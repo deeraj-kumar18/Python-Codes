@@ -40,8 +40,7 @@ def markCol(matrix, n, m, j):
             matrix[i][j] = -1
 
 def zeroMatrix(matrix, n, m):
-    # Set -1 for rows and cols
-    # that contains 0. Don't mark any 0 as -1:
+    # Set -1 for rows and cols that contains 0. Don't mark any 0 as -1:
     for i in range(n):
         for j in range(m):
             if matrix[i][j] == 0:
@@ -59,6 +58,49 @@ def zeroMatrix(matrix, n, m):
 
 matrix = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]
 ans=(zeroMatrix(matrix,len(matrix),len(matrix[0])))
+for row in ans:
+    for ele in row:
+        print(ele,end=" ")
+    print()
+
+# Better Approach 
+'''
+Instead of marking the rows and columns while iterating the matrix, instead 
+we create two arrays of size n and m resp to mark the rows and cols which have 0 in them.
+Even if we have one 0 in a row or col, that row and col elements will be zero.
+Later we iterate over the matrix and check if the row or col indices are marked in the arrays, if yes,
+then the element will be updated as 0.
+TC: O(n*m)
+SC: O(n)+O(m)  
+'''
+def zeroMatrix1(matrix):
+    n=len(matrix)
+    m=len(matrix[0])
+
+    row=[0]*n   # row array
+    col=[0]*m   # col array
+
+    # Traverse the matrix:
+    for i in range(n):
+        for j in range(m):
+            if matrix[i][j]==0:
+                 # mark ith index of row wih 1:
+                row[i] = 1
+                # mark jth index of col wih 1:
+                col[j] = 1
+    
+    # Finally, mark all (i, j) as 0
+    # if row[i] or col[j] is marked with 1.
+    for i in range(n):
+        for j in range(m):
+            if row[i] or col[j]:
+                matrix[i][j]=0
+    
+    return matrix
+
+print()
+matrix1 = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]
+ans=(zeroMatrix1(matrix1))
 for row in ans:
     for ele in row:
         print(ele,end=" ")

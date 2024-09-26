@@ -70,7 +70,7 @@ we create two arrays of size n and m resp to mark the rows and cols which have 0
 Even if we have one 0 in a row or col, that row and col elements will be zero.
 Later we iterate over the matrix and check if the row or col indices are marked in the arrays, if yes,
 then the element will be updated as 0.
-TC: O(n*m)
+TC: O(2*n*m)
 SC: O(n)+O(m)  
 '''
 def zeroMatrix1(matrix):

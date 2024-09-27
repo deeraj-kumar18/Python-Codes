@@ -23,3 +23,12 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.head = None  # Initially, the list is empty
+    
+    # 1. Insert at the beginning
+    def insert_at_beginning(self, data):
+        new_node=Node(data) # Create a new node
+        new_node.next=self.head # Point new node's next to the current head
+        self.head=new_node      # Assigning our new node as Head.
+        return 
+    
+    

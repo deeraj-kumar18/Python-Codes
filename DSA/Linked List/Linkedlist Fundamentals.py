@@ -68,14 +68,16 @@ class LinkedList:
     def delete_node(self, key):
         temp=self.head          # taking the reference of head node.
 
+
+        # Case 1: If the node to be deleted is the head node
         if temp and temp.data==key:
             self.head=temp.next  # making the next element as Head
             temp=None # Free the old head
             return
         
-        # Search the key to be deleted.
+        # Case 2: Search for the key to be deleted, keep track of the previous node
         prev=None
-        while temp and temp.next!=key:
+        while temp and temp.data!=key:
             prev=temp
             temp=temp.next
             
@@ -84,7 +86,7 @@ class LinkedList:
             print(f"{key} not found in the list.")
             return
         
-        # If found
+        # Case 3:If found
         prev.next=temp.next   # Unlink the node from the linked list
         temp=None   #Free the head
     
@@ -113,7 +115,7 @@ class LinkedList:
         print(" -> ".join(nodes)) # Print linked list
 
 
-
+# TESTING
 llist = LinkedList()
 
 # Insert elements
@@ -123,5 +125,13 @@ llist.insert_at_end(3)
 llist.insert_at_end(4)
 llist.insert_at_beginning(0)
 llist.display()
-llist.insert_after(llist.head.next,5)
+llist.insert_after(4,5)
+llist.display()
+llist.insert_after(5,6)
+llist.display()
+llist.delete_node(6)
+llist.display()
+print(llist.search(4))
+llist.display()
+llist.delete_list()
 llist.display()

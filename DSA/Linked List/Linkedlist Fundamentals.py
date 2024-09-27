@@ -44,14 +44,26 @@ class LinkedList:
 
     # 3. Insert after a given node
     def insert_after(self, prev_node, data):
-        if prev_node is None:
-            print("Previous node does not exist")
+        temp = self.head
+
+        # Traverse the list to find the node with the given value
+        while temp:
+            if temp.data == prev_node:
+                break
+            temp = temp.next
+
+        # If node with prev_node is not found
+        if temp is None:
+            print(f"Node with value {prev_node} not found.")
             return
-        
+
+        # Create the new node
         new_node = Node(data)
-        new_node.next=prev_node.next     # Point the new node's next to the next of prev_node
-        prev_node.next=new_node         # Link prev_node to the new node
-    
+        
+        # Link the new node to the next of the found node
+        new_node.next = temp.next      
+        temp.next = new_node      
+
     # 4. Delete a node by value
     def delete_node(self, key):
         temp=self.head          # taking the reference of head node.
@@ -99,3 +111,17 @@ class LinkedList:
             temp=temp.next
         
         print(" -> ".join(nodes)) # Print linked list
+
+
+
+llist = LinkedList()
+
+# Insert elements
+llist.insert_at_end(1)
+llist.insert_at_end(2)
+llist.insert_at_end(3)
+llist.insert_at_end(4)
+llist.insert_at_beginning(0)
+llist.display()
+llist.insert_after(llist.head.next,5)
+llist.display()

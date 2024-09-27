@@ -114,7 +114,18 @@ class LinkedList:
         
         print(" -> ".join(nodes)) # Print linked list
 
+    # 8. to get length of the linked list
+    def get_length(self): 
+        temp=self.head
 
+        count=0
+        while temp:
+            count+=1
+            temp=temp.next
+        
+        print("Length of the LinkedList is",count)
+        return count
+    
 # TESTING
 llist = LinkedList()
 
@@ -129,9 +140,12 @@ llist.insert_after(4,5)
 llist.display()
 llist.insert_after(5,6)
 llist.display()
+llist.get_length()
 llist.delete_node(6)
 llist.display()
 print(llist.search(4))
+llist.get_length()
 llist.display()
 llist.delete_list()
+llist.get_length()
 llist.display()

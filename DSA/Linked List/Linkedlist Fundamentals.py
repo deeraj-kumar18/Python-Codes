@@ -89,3 +89,13 @@ class LinkedList:
             current=current.next
         
         return False
+    
+    # 7. Display the linked list
+    def display(self):
+        nodes=[]
+        temp=self.head
+        while temp:
+            nodes.append(str(temp.data))  # Collect all node data
+            temp=temp.next
+        
+        print(" -> ".join(nodes)) # Print linked list

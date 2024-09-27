@@ -42,4 +42,15 @@ class LinkedList:
             temp=temp.next
         temp.next=new_node  # Point the last node's next to the new node
 
-    
+    # 3. Insert after a given node
+    def insert_after(self, prev_node, data):
+        if prev_node is None:
+            print("Previous node does not exist")
+            return
+        
+        new_node = Node(data)
+        new_node.next=prev_node.next     # Point the new node's next to the next of prev_node
+        prev_node.next=new_node         # Link prev_node to the new node
+
+    # 4. Delete a node by value
+    def delete_node(self, key):

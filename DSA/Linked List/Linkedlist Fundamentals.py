@@ -79,3 +79,13 @@ class LinkedList:
     # 5. Delete the entire list
     def delete_list(self):
         self.head=None    # Removing all references will delete the list
+    
+    # 6. Search for a node
+    def search(self, key):
+        current=self.head
+        while current:
+            if current.data==key:
+                return True
+            current=current.next
+        
+        return False

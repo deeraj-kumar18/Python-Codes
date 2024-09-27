@@ -25,7 +25,7 @@ n == matrix[i].length
 '''
 Here we create a new matrix and update the values in it. It will take us O(N) extra space.
 TC: O(2 * N^2)
-Sc: O(N)
+Sc: O(N^2) bcoz we are using a 2D list.
 '''
 def transpose(matrix):
     n=len(matrix)

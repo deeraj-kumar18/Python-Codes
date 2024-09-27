@@ -60,3 +60,26 @@ def rotate1(matrix):
 print()
 matrix1 = [[1,2,3],[4,5,6],[7,8,9]]
 print(rotate1(matrix1))
+
+# Optimal Approach 
+'''
+Transpose the matrix inplace and reverse the rows.
+TC: O(N^2)
+SC: O(1)
+'''
+def rotate2(matrix):
+    n=len(matrix) #rows 
+    m=len(matrix[0]) # columns 
+    # Inplace swap for Transpose.
+    for i in range(n):
+        for j in range(i+1,m):
+            matrix[i][j],matrix[j][i]=matrix[j][i],matrix[i][j]
+    
+    for i in range(n):
+        matrix[i].reverse()
+    
+    return matrix
+
+print()
+matrix2 = [[1,2,3],[4,5,6],[7,8,9]]
+print(rotate2(matrix2))

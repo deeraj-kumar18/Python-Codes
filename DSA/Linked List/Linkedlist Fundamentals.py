@@ -75,3 +75,7 @@ class LinkedList:
         # If found
         prev.next=temp.next   # Unlink the node from the linked list
         temp=None   #Free the head
+    
+    # 5. Delete the entire list
+    def delete_list(self):
+        self.head=None    # Removing all references will delete the list

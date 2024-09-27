@@ -64,7 +64,28 @@ class LinkedList:
         new_node.next = temp.next      
         temp.next = new_node      
 
-    # 4. Delete a node by value
+    # 4. Insert at given Index
+    def insert_at(self, index, data):
+        if index<0 and index>self.get_length():
+            raise Exception("Invalid Index")
+
+        if index == 0:
+            self.insert_at_beginning(data)
+            return
+        
+        count=0
+        current=self.head
+        while current:
+            if count ==  index-1:
+                node=Node(data,current.next)
+                current.next=node
+                break
+
+            current=current.next
+            count+=1
+        return
+    
+    # 5. Delete a node by value
     def delete_node(self, key):
         temp=self.head          # taking the reference of head node.
 
@@ -90,11 +111,30 @@ class LinkedList:
         prev.next=temp.next   # Unlink the node from the linked list
         temp=None   #Free the head
     
-    # 5. Delete the entire list
+    # 6. Delete a node by index
+    def remove_at(self, index):
+        if index<0 or index>=self.get_length():
+            raise Exception("Invalid Index")
+
+        if index==0:
+            self.head = self.head.next
+            return
+
+        count = 0
+        itr = self.head
+        while itr:
+            if count == index - 1:
+                itr.next = itr.next.next
+                break
+
+            itr = itr.next
+            count+=1
+
+    # 7. Delete the entire list
     def delete_list(self):
         self.head=None    # Removing all references will delete the list
     
-    # 6. Search for a node
+    # 8. Search for a node
     def search(self, key):
         current=self.head
         while current:
@@ -104,7 +144,7 @@ class LinkedList:
         
         return False
     
-    # 7. Display the linked list
+    # 9. Display the linked list
     def display(self):
         nodes=[]
         temp=self.head
@@ -114,7 +154,7 @@ class LinkedList:
         
         print(" -> ".join(nodes)) # Print linked list
 
-    # 8. to get length of the linked list
+    # 10. to get length of the linked list
     def get_length(self): 
         temp=self.head
 

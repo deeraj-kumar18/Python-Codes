@@ -34,6 +34,23 @@ def subarraySum(nums, k):
     return count
 # Does not work for large Testcases.
 
+# Better Approach
+'''
+Approach: Calculate the sum while iterating the inner loop and increasing the count whenever the 
+condition is satisfied.
+TC: O(N^2)
+SC:O(1) 
+'''
+def subarraySum1(nums, k):
+    count=0
+    for i in range(len(nums)):
+        subarray_sum=0
+        for j in range(i,len(nums)):
+            subarray_sum+=nums[j]
+            if subarray_sum==k:
+                count+=1
+    
+    return count
 
 def test_subarraySum():
     test_cases = [
@@ -47,7 +64,9 @@ def test_subarraySum():
     for i, test in enumerate(test_cases):
         result = subarraySum(test['nums'], test['k'])
         assert result == test['expected'], f"Test case {i + 1} failed: expected {test['expected']}, got {result}"
-        print(f"Test case {i + 1} passed!")
-
+        print(f"Test case {i + 1} of BruteForce Solution passed!")
+        result = subarraySum1(test['nums'], test['k'])
+        assert result == test['expected'], f"Test case {i + 1} failed: expected {test['expected']}, got {result}"
+        print(f"Test case {i + 1} of Better Solution passed!")
 if __name__ == "__main__":
     test_subarraySum()

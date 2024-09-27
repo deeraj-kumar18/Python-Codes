@@ -51,6 +51,27 @@ class LinkedList:
         new_node = Node(data)
         new_node.next=prev_node.next     # Point the new node's next to the next of prev_node
         prev_node.next=new_node         # Link prev_node to the new node
-
+    
     # 4. Delete a node by value
     def delete_node(self, key):
+        temp=self.head          # taking the reference of head node.
+
+        if temp and temp.data==key:
+            self.head=temp.next  # making the next element as Head
+            temp=None # Free the old head
+            return
+        
+        # Search the key to be deleted.
+        prev=None
+        while temp and temp.next!=key:
+            prev=temp
+            temp=temp.next
+            
+        # If the key was not found in the list
+        if temp is None:
+            print(f"{key} not found in the list.")
+            return
+        
+        # If found
+        prev.next=temp.next   # Unlink the node from the linked list
+        temp=None   #Free the head

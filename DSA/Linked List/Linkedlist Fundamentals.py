@@ -31,4 +31,15 @@ class LinkedList:
         self.head=new_node      # Assigning our new node as Head.
         return 
     
+    # 2. Insert at the end
+    def insert_at_end(self, data):
+        new_node=Node(data) # Create a new node
+        if self.head==None: # If the list is empty, the new node becomes the head
+            self.head=new_node
+            return
+        temp=self.head
+        while temp.next:     # Traverse to the last node
+            temp=temp.next
+        temp.next=new_node  # Point the last node's next to the new node
+
     

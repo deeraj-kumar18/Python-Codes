@@ -52,6 +52,34 @@ def subarraySum1(nums, k):
     
     return count
 
+# Optimal Solution 
+'''
+Approach: We use the Concept of Prefix Sum.
+TC: O(N)
+SC: O(1)
+'''
+from collections import defaultdict
+def subarraySum2(nums, k):
+    count=0
+    mapp=defaultdict(int)
+    preSum=0
+    mapp[0] = 1 # Setting 0 in the map.
+    for i in range(len(nums)):
+        # add current element to prefix Sum:
+        preSum += nums[i]
+
+        # Calculate x-k:
+        remove = preSum - k
+
+        # Add the number of subarrays to be removed:
+        count += mapp[remove]
+
+        # Update the count of prefix sum
+        # in the map.
+        mapp[preSum] += 1
+
+    return count
+
 def test_subarraySum():
     test_cases = [
         {"nums": [1, 1, 1], "k": 2, "expected": 2},
@@ -68,5 +96,8 @@ def test_subarraySum():
         result = subarraySum1(test['nums'], test['k'])
         assert result == test['expected'], f"Test case {i + 1} failed: expected {test['expected']}, got {result}"
         print(f"Test case {i + 1} of Better Solution passed!")
+        result = subarraySum2(test['nums'], test['k'])
+        assert result == test['expected'], f"Test case {i + 1} failed: expected {test['expected']}, got {result}"
+        print(f"Test case {i + 1} of Optimal Solution passed!")
 if __name__ == "__main__":
     test_subarraySum()

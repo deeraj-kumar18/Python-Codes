@@ -21,6 +21,7 @@ Constraints:
 All the integers in nums are unique.
 nums is sorted in ascending order.
 '''
+# ITERATIVE APPROACH
 def binary_search(nums, target):
     n=len(nums)
     low=0

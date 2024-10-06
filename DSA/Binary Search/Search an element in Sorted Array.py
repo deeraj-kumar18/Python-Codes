@@ -22,6 +22,10 @@ All the integers in nums are unique.
 nums is sorted in ascending order.
 '''
 # ITERATIVE APPROACH
+'''
+TC: O(logN)
+SC: O(1) 
+'''
 def binary_search(nums, target):
     n=len(nums)
     low=0
@@ -44,6 +48,10 @@ print("Iterative Approach")
 print(binary_search(nums,target))
 
 # RECURSIVE APPROACH 
+'''
+TC: O(logN)
+SC: O(1) 
+'''
 def binary_search_rec(nums,low,high,target):
     if low>high:  # Base Case: At this condition, the search ends.
         return -1

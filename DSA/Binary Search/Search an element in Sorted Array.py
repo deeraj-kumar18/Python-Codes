@@ -21,6 +21,13 @@ Constraints:
 All the integers in nums are unique.
 nums is sorted in ascending order.
 '''
+
+# OVERFLOW CASE
+'''
+There can be few instances when the maximum limit will be INT MAX, and to calculate the mid, we need to 
+add INT MAX twice, which will overflow the size of the datatype. Hence in such situations, we need to use
+mid = low + (high-low)//2
+'''
 # ITERATIVE APPROACH
 '''
 TC: O(logN)

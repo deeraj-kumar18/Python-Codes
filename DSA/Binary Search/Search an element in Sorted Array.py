@@ -40,4 +40,20 @@ def binary_search(nums, target):
 
 nums = [-1,0,3,5,9,12]
 target = 69
+print("Iterative Approach")
 print(binary_search(nums,target))
+
+# RECURSIVE APPROACH 
+def binary_search_rec(nums,low,high,target):
+    if low>high:  # Base Case: At this condition, the search ends.
+        return -1
+    
+    mid=(low+high)//2
+    if nums[mid]==target:
+        return mid
+    elif target>nums[mid]:
+        return binary_search_rec(nums,mid+1,high,target)
+    return binary_search_rec(nums,low,mid-1,target)
+
+print("Recursive Approach")
+print(binary_search_rec(nums,0,len(nums)-1,69))

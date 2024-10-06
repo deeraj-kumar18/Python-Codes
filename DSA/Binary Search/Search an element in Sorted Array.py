@@ -22,4 +22,21 @@ All the integers in nums are unique.
 nums is sorted in ascending order.
 '''
 def binary_search(nums, target):
-    return
+    n=len(nums)
+    low=0
+    high=n-1
+    while(low<=high):
+        mid=(low+high)//2
+        # print(mid)
+        if nums[mid]==target:
+            return mid
+        elif target>nums[mid]: # If the target element is greater than mid element, we search the RIGHT half
+            low=mid+1       
+        else:
+            high=mid-1  # If the target element is lesser than mid element, we search the LEFT half
+
+    return -1   
+
+nums = [-1,0,3,5,9,12]
+target = 69
+print(binary_search(nums,target))

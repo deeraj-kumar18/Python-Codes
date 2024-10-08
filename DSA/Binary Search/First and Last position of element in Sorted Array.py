@@ -55,3 +55,45 @@ def searchRange(nums,target):
 nums = [5,7,7,8,8,10]
 target = 10
 print(searchRange(nums,target))
+
+# Optimal Approach
+'''
+We modify the Binary Search to find the first and last occurance of an element.
+TC: O(log n)
+SC: O(1)
+'''
+def searchRange_binary(nums,target):
+    # Searching for First
+    n=len(nums)
+    low=0
+    high=n-1
+    first=-1 
+    while(low<=high):
+        mid=(low+high)//2
+        if nums[mid]==target:
+            first= mid
+            high=mid-1
+        elif target>nums[mid]: # If the target element is greater than mid element, we search the RIGHT half
+            low=mid+1       
+        else:
+            high=mid-1  # If the target element is lesser than mid element, we search the LEFT half
+
+    # Searching For Last
+    low=0
+    high=n-1
+    last=-1
+    while(low<=high):
+        mid=(low+high)//2
+        if nums[mid]==target:
+            last= mid
+            low=mid+1
+        elif target>nums[mid]: # If the target element is greater than mid element, we search the RIGHT half
+            low=mid+1       
+        else:
+            high=mid-1  # If the target element is lesser than mid element, we search the LEFT half
+
+
+    return [first,last] 
+
+
+print(searchRange_binary(nums,target))

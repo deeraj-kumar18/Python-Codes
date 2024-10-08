@@ -30,13 +30,14 @@ def getFloorAndCeil(x, arr):
     n=len(arr)
     low,high=0,n-1
     floor,ceil = -1,-1
+    # Binary search for floor
     while low<=high:
         mid=(low+high)//2
         if arr[mid]<=x:
             floor=arr[mid]
-            low=mid+1
+            low=mid+1  # Move to the right half to find a larger possible floor
         else:
-            high=mid-1
+            high=mid-1  # Move to the left half
     
     # Binary search for ceil
     low, high = 0, n - 1

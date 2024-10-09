@@ -45,4 +45,17 @@ nums =[4,5,6,7,0,1,2]
 target=0
 print(search(nums,target))
 
+# Conventional BruteForce Approach
+'''
+Run a loop to check if the target element is found in the list and return its index.
+TC: O(N)
+SC: O(1)
+'''
+def search1(nums, target):
+    for i in range(len(nums)):
+        if nums[i]==target:
+            return i 
 
+    return -1
+
+print(search1(nums,target))

@@ -29,3 +29,20 @@ All values of nums are unique.
 nums is an ascending array that is possibly rotated.
 -104 <= target <= 104
 '''
+# BruteForce Approach Using Built-in methods
+'''
+Using the "in" operator and .index() method to find the necessary index.
+TC: O(N)
+SC: O(1)
+'''
+def search(nums, target):
+    if target in nums:
+        return nums.index(target)
+    else:
+        return -1
+
+nums =[4,5,6,7,0,1,2]
+target=0
+print(search(nums,target))
+
+

@@ -59,3 +59,17 @@ def search1(nums, target):
     return -1
 
 print(search1(nums,target))
+
+# Optimal Approach
+'''
+As we see the keywords sorted and search, Binary Search strikes our mind. Here we need to modify our 
+binary search as we are working on an Rotated Sorted Array, we cannot go forward with our conventional
+Binary search algo. 
+1. We find which part of the array is sorted.
+2. Eliminate the search space by comparing values of low, mid and high.
+
+TC: O(log n)
+SC: O(1)
+'''
+def search_binary(nums,target):
+    return

@@ -72,4 +72,18 @@ TC: O(log n)
 SC: O(1)
 '''
 def search_binary(nums,target):
+    low,high=0,len(nums)-1
+    while low<=high:
+        mid=(low+mid)//2
+        if nums[mid]==target:
+            return mid
+        # Finding for Sorted Half.
+        # Left Half Sorted Array 
+        if nums[low]<=nums[mid]:
+            # Eliminatimg the search space by comparing values of low, mid and high
+
+        
+        # Right Half Sorted Array
+        if nums[mid]<=nums[high]:
+
     return

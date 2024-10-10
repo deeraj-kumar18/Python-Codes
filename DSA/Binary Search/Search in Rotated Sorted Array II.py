@@ -64,5 +64,5 @@ def search_binary(nums,target):
     return False
 
 nums = [2,5,6,0,0,1,2]
-target = 3
+target = 0
 print(search_binary(nums,target))

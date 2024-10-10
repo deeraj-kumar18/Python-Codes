@@ -30,6 +30,8 @@ The major issue arises when the duplicates are in low, mid and high positions at
 condition our previous code breaks. Hence we need to resolve the condition 
 arr[low] == arr[mid] == arr[high]
 WE shrink our search space by one element each on left and right side. 
+TC: O(log n) for average case
+TC: O(n/2) for worst case
 '''
 def search_binary(nums,target):
     low,high=0,len(nums)-1

@@ -64,7 +64,14 @@ nums = [1,1,2,3,3,4,4,8,8]
 print(singleNonDuplicate1(nums))
 
 # Optimal Approach 
-
+''' https://takeuforward.org/data-structure/search-single-element-in-a-sorted-array/
+Check if arr[mid] is the single element:
+If arr[mid] != arr[mid-1] and arr[mid] != arr[mid+1]: If this condition is true for arr[mid], we can conclude arr[mid] is the single element. We will return arr[mid].
+If (mid % 2 == 0 and arr[mid] == arr[mid+1])
+or (mid%2 == 1 and arr[mid] == arr[mid-1]): This means we are in the left half and we should eliminate it as our single element appears on the right. So, we will do this:
+low = mid+1.
+Otherwise, we are in the right half and we should eliminate it as our single element appears on the left. So, we will do this: high = mid-1.
+'''
 def singleNonDuplicate(arr):
     n = len(arr)  # Size of the array
 

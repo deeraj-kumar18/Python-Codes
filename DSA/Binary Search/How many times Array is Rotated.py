@@ -23,3 +23,32 @@ Constraints:
 1 <= n <=105
 1 <= arri <= 107
 '''
+# Optimal Approach 
+'''
+Observation: The number of times an array is rotated is equal to the index of the minimum value.
+'''
+
+def findKRotation(nums):
+    low,high=0,len(nums)-1
+    ans=float('inf')
+    index1=-1
+
+    while low<=high:
+        mid=(low+high)//2
+        # Left half sorted
+        if nums[low]<=nums[mid]:
+            if nums[low]<ans:
+                index1=low
+                ans=nums[low]
+            low=mid+1
+        # Right half sorted
+        else:
+            if nums[mid]<ans:
+                index1=mid
+                ans=nums[mid]   # Mid is the least element if the right half is sorted.
+            high=mid-1
+
+    return index1
+
+arr = [6,1, 2, 3, 4, 5]
+print(findKRotation(arr))

@@ -36,7 +36,9 @@ nums is sorted and rotated between 1 and n times.
 '''
 # Naive Approach 
 '''
-Linear search and find the minimum or use the built in min func.'''
+Linear search and find the minimum or use the built in min func.
+TC: O(n)
+'''
 def search(nums):
     return min(nums)
 

@@ -20,6 +20,34 @@ Constraints:
 1 <= nums.length <= 105
 0 <= nums[i] <= 105
 '''
+# Naive Approach using A For loop
+'''
+TC:O(n)
+'''
+def singleNonDuplicate0(nums):
+    n=len(nums)
+    # Edge case, only one element.
+    if n==1:
+        return nums[0]
+    
+    for i in range(n):
+        # First element only has element on its Right.
+        if i==0:
+            if nums[i]!=nums[i+1]:
+                return nums[i]
+        # Last element only has element on its Left.
+        elif i==n-1:
+            if nums[i]!=nums[i-1]:
+                return nums[i]
+        # For all the middle elements, we check the left and right elements and both of them
+        #  are not equal. then it is Single Element.
+        else:
+            if nums[i]!=nums[i-1] and nums[i]!=nums[i+1]:
+                return nums[i]
+
+nums = [1,1,2,3,3,4,4,8,8]
+print(singleNonDuplicate0(nums))
+
 # Approach using Dictionary
 '''
 TC: O(n)

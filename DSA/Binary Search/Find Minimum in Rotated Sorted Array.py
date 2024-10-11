@@ -45,3 +45,13 @@ def search(nums):
 
 nums = [18,19,11,13,15,17]
 print(search(nums))
+
+# Optimal Approach using Binary Search
+'''
+We identify the sorted half
+store the minimum of the sorted half and eliminate the sorted half space.
+we continue the same, until we find the least element.
+TC: O(log n) 
+'''
+def search_binary(nums):
+    return

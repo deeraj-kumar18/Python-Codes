@@ -20,3 +20,17 @@ Constraints:
 1 <= nums.length <= 105
 0 <= nums[i] <= 105
 '''
+# Approach using Dictionary
+'''
+TC: O(n)
+SC: O(n)
+'''
+from collections import Counter
+def singleNonDuplicate(nums):
+    dict=Counter(nums)
+    for key,val in dict.items():
+        if val==1:
+            return key
+
+nums = [1,1,2,3,3,4,4,8,8]
+print(singleNonDuplicate(nums))

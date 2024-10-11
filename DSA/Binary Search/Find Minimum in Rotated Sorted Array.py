@@ -34,3 +34,12 @@ n == nums.length
 All the integers of nums are unique.
 nums is sorted and rotated between 1 and n times.
 '''
+# Naive Approach 
+'''
+Linear search and find the minimum or use the built in min func.'''
+def search(nums):
+    return min(nums)
+
+
+nums = [18,19,11,13,15,17]
+print(search(nums))

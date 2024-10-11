@@ -54,4 +54,21 @@ we continue the same, until we find the least element.
 TC: O(log n) 
 '''
 def search_binary(nums):
-    return
+    low,high=0,len(nums)-1
+    ans=float('inf')
+    
+    while low<=high:
+        mid=(low+high)//2
+        # Left half sorted
+        if nums[low]<=nums[mid]:
+            ans=min(ans,nums[low])
+            low=mid+1
+        # Right half sorted
+        else:
+            ans=min(ans,nums[mid])   # Mid is the least element if the right half is sorted.
+            high=mid-1
+
+    return ans
+
+nums = [18,19,11,13,15,17]
+print(search_binary(nums))

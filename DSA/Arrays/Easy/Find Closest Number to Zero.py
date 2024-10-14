@@ -24,3 +24,18 @@ Constraints:
 1 <= n <= 1000
 -105 <= nums[i] <= 105
 '''
+def findClosestNumber(nums):
+    closest=nums[0]  # We are guaranted that we have atleast one element.
+    for num in nums:
+        if num==0:
+            return 0
+        if abs(num)<abs(closest):
+            closest=num
+        elif abs(num)==abs(closest):
+            if num>closest:
+                closest=num
+    
+    return closest
+
+nums = [2,-1,11,3]
+print(findClosestNumber(nums))

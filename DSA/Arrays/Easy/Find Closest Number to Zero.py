@@ -29,10 +29,10 @@ def findClosestNumber(nums):
     for num in nums:
         if num==0:
             return 0
-        if abs(num)<abs(closest):
+        if abs(num)<abs(closest): # if the distance is less than closest.
             closest=num
-        elif abs(num)==abs(closest):
-            if num>closest:
+        elif abs(num)==abs(closest): # if the distance is equal to closest
+            if num>closest: # we check which number is greater.
                 closest=num
     
     return closest

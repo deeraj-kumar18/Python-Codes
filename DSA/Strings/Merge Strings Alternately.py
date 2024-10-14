@@ -64,3 +64,22 @@ def mergeAlternately(word1, word2):
 
 print(mergeAlternately("aue","nde"))
 print(mergeAlternately("abcd","pq"))
+
+# Approach 2
+def merge(word1,word2):
+    len1,len2=len(word1),len(word2)
+    ans=""
+    for i in range(min(len1,len2)):
+        ans+=word1[i]
+        ans+=word2[i]
+    
+    if len1>len2:
+        ans+=word1[len2:] 
+    else:
+        ans+=word2[len1:]
+
+    return ans
+
+
+print(merge("aue","nde"))
+print(merge("abcd","pq"))

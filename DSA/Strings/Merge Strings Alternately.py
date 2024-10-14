@@ -34,3 +34,33 @@ Constraints:
 1 <= word1.length, word2.length <= 100
 word1 and word2 consist of lowercase English letters.
 '''
+# Approach 1 Using Two Pointers
+'''
+TC: O(N)
+'''
+def mergeAlternately(word1, word2):
+    i,j=0,0
+    ans=""
+    flag=1
+    while i<len(word1) and j<len(word2):
+        if flag:
+            ans+=word1[i]
+            i+=1
+            flag=0
+        else:
+            ans+=word2[j]
+            j+=1
+            flag=1
+    
+    while i<len(word1):
+        ans+=word1[i]
+        i+=1
+
+    while j<len(word2):
+        ans+=word2[j]
+        j+=1
+    
+    return ans
+
+print(mergeAlternately("aue","nde"))
+print(mergeAlternately("abcd","pq"))

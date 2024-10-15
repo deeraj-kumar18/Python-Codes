@@ -83,3 +83,48 @@ def merge(word1,word2):
 
 print(merge("aue","nde"))
 print(merge("abcd","pq"))
+
+
+# Optimal Solution
+"""
+This is the optimal approach because, appending in a string takes O(N) time, whereas we can append
+to a list in O(1) time.
+Time: O(1)
+Space: O(1)
+"""
+                   
+class Solution:
+    def mergeAlternately(word1: str, word2: str):
+        A, B = len(word1), len(word2)
+        a, b = 0, 0
+        s = []
+
+        word = 1
+        while a < A and b < B:
+            if word == 1:
+                s.append(word1[a])
+                a += 1
+                word = 2
+            else:
+                s.append(word2[b])
+                b += 1
+                word = 1
+        
+        while a < A:
+            s.append(word1[a])
+            a += 1
+        
+        while b < B:
+            s.append(word2[b])
+            b += 1
+        
+        return ''.join(s)
+        # Let A be the length of Word1
+        # Let B be the length of Word2
+        # Let T = A + B
+        
+        
+
+
+print(mergeAlternately("aue","nde"))
+print(mergeAlternately("abcd","pq"))

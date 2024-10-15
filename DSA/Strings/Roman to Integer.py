@@ -41,3 +41,24 @@ Constraints:
 s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
 It is guaranteed that s is a valid roman numeral in the range [1, 3999].
 '''
+# Approach 
+def romanToInt(s):
+    n=len(s)
+    ans=0
+    dict={"I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000}
+    i=0
+    while i<n:
+         # We need to check till the penultimate number. 
+         #  We are checking if the currente leement is less than the next element, if yes, we subtract the value.
+        if i<n-1 and dict[s[i]]<dict[s[i+1]]:
+            ans+= dict[s[i+1]] - dict[s[i]]
+            i+=2
+        else:
+            ans+= dict[s[i]]
+            i+=1
+    
+    return ans
+
+testcases=["III","LVIII","MCMXCIV"]
+for testcase in testcases:
+    print(romanToInt(testcase))

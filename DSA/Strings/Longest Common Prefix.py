@@ -40,5 +40,5 @@ def longestCommonPrefix(strs):
     
     return strs[0][:min_len]         # All characters matched, return full prefix
 
-strs = ["flower","flow","flight"]
+strs = ["dog","racecar","car"]
 print(longestCommonPrefix(strs))

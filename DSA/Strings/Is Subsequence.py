@@ -38,11 +38,40 @@ def isSubsequence(s, t):
         if s[i]==t[j]:
             i+=1 # Move i only if characters match
         j+=1 # Always move j to continue scanning t
-    
+
+
     # If i has moved through the entire string s, then s is a subsequence of t
     return i == len(s)
 
-s = "abc"
-t = "ahbgdc"
+i=1
+# Test case 1: s is a subsequence of t
+s1 = "abc"
+t1 = "ahbgdc"
+# Expected output: True
+print(f"TestCase {i}",isSubsequence(s1, t1))
+i+=1
+# Test case 2: s is not a subsequence of t
+s2 = "axc"
+t2 = "ahbgdc"
+# Expected output: False
+print(f"TestCase {i}",isSubsequence(s2, t2))
+i+=1
+# Test case 3: s is an empty string
+s3 = ""
+t3 = "ahbgdc"
+# Expected output: True (empty string is a subsequence of any string)
+print(f"TestCase {i}",isSubsequence(s3, t3))
+i+=1
+# Test case 4: t is an empty string, s is non-empty
+s4 = "abc"
+t4 = ""
+# Expected output: False (non-empty s cannot be a subsequence of an empty string)
+print(f"TestCase {i}",isSubsequence(s4, t4))
+i+=1
 
-print(isSubsequence(s,t))
+# Test case 5: s and t are the same
+s5 = "abc"
+t5 = "abc"
+# Expected output: True (s is exactly t, so it's a subsequence)
+print(f"TestCase {i}",isSubsequence(s5, t5))
+i+=1

@@ -37,7 +37,16 @@ Sum of lengths of words ≤ 105
 
 Note: word1 and word2 are both in the list.
 '''
+# Approach
+'''
+We take two pointers, iterate over the list and track the index at which the words occurs.
+We store the ans as the distance between the two indices and also track the minimum if we find 
+in the list further.
+TC: O(N)
+SC: O(1)
+'''
 def shortest_distance(s,word1,word2):
+     # Variables to track the index
      dist1,dist2=-1,-1
      ans=float('inf')
 
@@ -54,13 +63,7 @@ def shortest_distance(s,word1,word2):
      return ans
 
 #Test cases
-testcases = []
-
-# Test Case 1: Simple Case
-testcases.append((["the", "quick", "brown", "fox", "quick"], "the", "fox", 3))
-
-# Test Case 2: Words are next to each other
-testcases.append((["the", "quick", "brown", "fox", "quick"], "brown", "fox", 1))
+testcases = [(["the", "quick", "brown", "fox", "quick"], "the", "fox", 3),(["the", "quick", "brown", "fox", "quick"], "brown", "fox", 1)]
 
 # Test Case 3: Multiple occurrences of word1 and word2
 testcases.append((["geeks", "for", "geeks", "contribute", "practice"], "geeks", "practice", 2))

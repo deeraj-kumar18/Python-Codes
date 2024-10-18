@@ -19,3 +19,18 @@ Constraints:
 1 <= haystack.length, needle.length <= 104
 haystack and needle consist of only lowercase English characters.
 '''
+# Approach 1
+def findstr(haystack,needle):
+    ans=-1
+    len_of_needle=len(needle)
+
+    for i in range(len(haystack)):
+        if haystack[i:i+len_of_needle]==needle:
+            ans=i
+            break
+    
+    return ans
+
+haystack = "sadbutsaad" 
+needle = "saad"
+print(findstr(haystack,needle))

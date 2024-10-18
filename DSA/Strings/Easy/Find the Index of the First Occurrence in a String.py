@@ -34,3 +34,9 @@ def findstr(haystack,needle):
 haystack = "sadbutsaad" 
 needle = "saad"
 print(findstr(haystack,needle))
+
+# Approach 2
+def findstr1(haystack,needle):
+    return haystack.index(needle)
+
+print(findstr1(haystack,needle))

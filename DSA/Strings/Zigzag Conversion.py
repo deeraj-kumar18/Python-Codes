@@ -35,3 +35,31 @@ Constraints:
 s consists of English letters (lower-case and upper-case), ',' and '.'.
 1 <= numRows <= 1000
 '''
+def convert(s,numRows):
+    if numRows==1 or numRows>len(s):
+        return s
+    
+    direction=1
+    row_indicator=0
+
+    rows=[[] for _ in range(numRows)]
+
+    for char in s:
+        rows[row_indicator].append(char)
+
+        if row_indicator==0:
+            direction=1
+        elif row_indicator == numRows-1:
+            direction=-1
+        
+        row_indicator+=direction
+    
+    ans=""
+    for row in rows:
+        ans+="".join(row)
+    
+    return ans
+
+s = "PAYPALISHIRING" 
+numRows = 4
+print(convert(s,numRows))

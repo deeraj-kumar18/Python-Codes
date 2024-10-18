@@ -49,7 +49,7 @@ def romanToInt(s):
     i=0
     while i<n:
          # We need to check till the penultimate number. 
-         #  We are checking if the currente leement is less than the next element, if yes, we subtract the value.
+         #  We are checking if the current element is less than the next element, if yes, we subtract the value.
         if i<n-1 and dict[s[i]]<dict[s[i+1]]:
             ans+= dict[s[i+1]] - dict[s[i]]
             i+=2

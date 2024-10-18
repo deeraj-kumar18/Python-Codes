@@ -27,3 +27,13 @@ Constraints:
 s consists of only English letters and spaces ' '.
 There will be at least one word in s.
 '''
+def lengthOfLastWord(s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        ans=s.strip().split(" ")
+        return len(ans[-1])
+
+s = "luffy is still joyboy"
+print(lengthOfLastWord(s))

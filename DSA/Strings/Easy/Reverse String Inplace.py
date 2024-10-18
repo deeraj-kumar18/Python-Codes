@@ -18,3 +18,14 @@ Constraints:
 1 <= s.length <= 105
 s[i] is a printable ascii character.
 '''
+# TC: O(n/2)
+# SC: O(1)
+def reverseString(s):
+    n=len(s)
+    for i in range(n//2):
+        s[i],s[n-i-1]=s[n-i-1],s[i]
+    
+    return s
+
+s = ["h","e","l","l","o"]
+print(reverseString(s))

@@ -30,7 +30,7 @@ Constraints:
 1 ≤ length of a, b ≤ 105
 '''
 def isRotated(str1,str2):
-
+    # If the lengths of the two strings aren't equal, we return False.
     if len(str1)!=len(str2):
         return False
         
@@ -40,6 +40,7 @@ def isRotated(str1,str2):
     # left rotation
     lr=str1[2:]+str1[:2]
     
+    # Checking if the right rotation or left rotation is equal to the str2.
     if rr==str2 or lr==str2:
         return True
     

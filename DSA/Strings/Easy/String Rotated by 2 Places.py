@@ -29,3 +29,22 @@ Challenge: Try doing it in O(1) space complexity.
 Constraints:
 1 ≤ length of a, b ≤ 105
 '''
+def isRotated(str1,str2):
+
+    if len(str1)!=len(str2):
+        return False
+        
+    # right rotation
+    rr=str1[-2:]+str1[:-2]
+    
+    # left rotation
+    lr=str1[2:]+str1[:2]
+    
+    if rr==str2 or lr==str2:
+        return True
+    
+    return False
+
+a = 'geeksforgeeks'
+b = 'geeksgeeksfor'
+print(isRotated(a,b))

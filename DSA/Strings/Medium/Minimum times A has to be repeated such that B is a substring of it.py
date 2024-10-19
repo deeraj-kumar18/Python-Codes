@@ -34,22 +34,27 @@ Constraints:
 String A and B consists of lower case alphabets
 '''
 def minRepeats(a,b):
-    count=1
-    repeated_a=a
+    # Starting with "a" repeated once.
+    count=1  
+    repeated_a=a   
 
+    # Keep repeating until repeated_A is at least as long as B
     while len(repeated_a)<len(b):
         repeated_a+=a
         count+=1
 
+    # Checking if "b" is a substring of "a"
     if b in repeated_a :
         return count 
     
+    # Try adding one more repetition to cover wraparound cases
     repeated_a+=a
     count+=1
+
     if b in repeated_a :
         return count
 
-
+    # If B is still not a substring, return -1
     return -1
 
 A = "abcabc"

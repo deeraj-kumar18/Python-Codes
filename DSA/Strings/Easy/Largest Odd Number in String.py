@@ -41,3 +41,15 @@ def largestOddNumber(num):
 
 num="2345356"
 print(largestOddNumber(num))
+
+# Approach 2 using Lists
+def largestOddNumber1(num):
+    n=len(num)
+    a=list(num)
+    for i in range(n-1,-1,-1):
+        if(int(a[i])%2==1):
+            return (str("".join(a[:i+1])))
+    
+    return ""
+
+print(largestOddNumber1(num))

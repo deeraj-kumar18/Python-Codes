@@ -53,3 +53,9 @@ def largestOddNumber1(num):
     return ""
 
 print(largestOddNumber1(num))
+
+# Approach 3 Using String Method 
+def largestOddNumber2(num):
+    return num.rstrip('02468')
+
+print(largestOddNumber2(num))

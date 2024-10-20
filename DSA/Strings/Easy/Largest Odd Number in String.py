@@ -36,7 +36,7 @@ def largestOddNumber(num):
             if int(num[i])%2==1:
                 return num[:i+1]
     
-
+    # After complete iteration, if there are no odd numbers, then we return an empty string.
     return ""
 
 num="2345356"

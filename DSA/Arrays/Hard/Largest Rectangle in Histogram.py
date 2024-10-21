@@ -19,21 +19,31 @@ Constraints:
 0 <= heights[i] <= 104
 '''
 def largestRectangleArea(heights):
+    # initiating the max_area variable to zero.
     max_area=0
+
+    # Iterating over the list.
     for i in range(len(heights)):
+        # Assigning the present height to the height variable.
         height=heights[i]
+        # Initialising left and right pointers as i index.
         left,right,=i,i
 
+        # Checking left till breaking condition
         while left>0 and heights[left-1]>=height:
             left-=1
         
+        # Checking right till breaking condition
         while right<len(heights)-1 and heights[right+1]>=height:
             right+=1
         
+        # Calculating width
         width=right-left+1
 
+        # Calculating area.
         area= width*height
 
+        # Updating the maximum area.
         if area>=max_area:
             max_area=area
     

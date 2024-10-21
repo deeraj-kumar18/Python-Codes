@@ -40,5 +40,5 @@ def find_missing_positive(arr):
 
     return missing_no
 
-a=eval(input())
+a = [3, 4, -1, 1]
 print(find_missing_positive(a))

@@ -18,6 +18,7 @@ Constraints:
 1 <= heights.length <= 105
 0 <= heights[i] <= 104
 '''
+# Brute Force Approach 
 def largestRectangleArea(heights):
     # initiating the max_area variable to zero.
     max_area=0

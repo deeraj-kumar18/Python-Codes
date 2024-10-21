@@ -26,14 +26,16 @@ Constraints:
 1 <= nums.length <= 105
 -231 <= nums[i] <= 231 - 1
 '''
+# Brute force approach 
 def find_missing_positive(arr):
     # Sorting the Array in increasing order.
     arr.sort()
-    # Assigning 
+    # Assigning first positive missing number as 1.
     missing_no=1 
     for i in range(len(arr)):
-        if arr[i]>0:
-            if arr[i]==missing_no:
+        # Checking for positive numbers.
+        if arr[i]>0: 
+            if arr[i]==missing_no:  # if the missing number and the iterating number are same, we increment the count.
                 missing_no+=1
 
     return missing_no

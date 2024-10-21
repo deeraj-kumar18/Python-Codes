@@ -26,3 +26,17 @@ Constraints:
 1 <= nums.length <= 105
 -231 <= nums[i] <= 231 - 1
 '''
+def find_missing_positive(arr):
+    # Sorting the Array in increasing order.
+    arr.sort()
+    # Assigning 
+    missing_no=1 
+    for i in range(len(arr)):
+        if arr[i]>0:
+            if arr[i]==missing_no:
+                missing_no+=1
+
+    return missing_no
+
+a=eval(input())
+print(find_missing_positive(a))

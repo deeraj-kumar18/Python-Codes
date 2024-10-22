@@ -30,3 +30,36 @@ Output:
 Explanation:
 The 3x3 matrix follows a checkerboard pattern where every cell alternates between 0 and 1.
 '''
+# Own Approach
+def checkerboard(n,m):
+    output=[]
+    for i in range(n):
+        innerlist=[]
+        if i%2==0:
+            flag=True
+            for j in range(m):
+                if flag:
+                    innerlist.append(0)
+                    flag=False
+                else:
+                    innerlist.append(1)
+                    flag=True
+        
+        else:
+            flag=True
+            for j in range(m):
+                if flag:
+                    innerlist.append(1)
+                    flag=False
+                else:
+                    innerlist.append(0)
+                    flag=True
+
+        
+        output.append(innerlist)
+        
+    return output
+
+n=int(input())
+m=int(input())
+print(checkerboard(n,m))

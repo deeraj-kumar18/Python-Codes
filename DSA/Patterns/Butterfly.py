@@ -36,6 +36,7 @@ Output:
 **    **
 *      *
 '''
+# Own Approach
 def butterfly(n):
     spaces=(n*2)-2
     for i in range(1,n+1):
@@ -48,6 +49,24 @@ def butterfly(n):
         spaces+=2
 
 
-n=10
-for i in range(n):
-    butterfly(i)
+
+# Easy approach
+def butterfly1(n):
+    # First half of the butterfly (increasing stars)
+    for i in range(1, n + 1):
+        stars = '*' * i
+        spaces = ' ' * (2 * (n - i))
+        print(stars + spaces + stars)
+    
+    # Second half of the butterfly (decreasing stars)
+    for i in range(n, 0, -1):
+        stars = '*' * i
+        spaces = ' ' * (2 * (n - i))
+        print(stars + spaces + stars)
+
+# Input
+n = int(input("Enter a number: "))
+
+# Call the function
+butterfly(n)
+butterfly1(n)

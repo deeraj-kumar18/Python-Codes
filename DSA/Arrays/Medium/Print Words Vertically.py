@@ -50,7 +50,7 @@ def print_vertically(s):
             # Else we append a space.
             else:
                 ele+=" "
-      
+        # Appending the string to our list after removing trailing spaces on the right side.
         ans.append(ele.rstrip())
     return ans
 

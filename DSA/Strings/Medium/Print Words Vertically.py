@@ -31,3 +31,19 @@ Constraints:
 s contains only upper case English letters.
 It's guaranteed that there is only one space between 2 words.
 '''
+def print_vertically(s):
+    words=s.split(" ")
+    max_len=max(len(word) for word in words)
+    ans=[]
+    for i in range(max_len):
+        ele=""
+        for word in words:
+            if i<len(word):
+                ele+=word[i]
+            else:
+                ele+=" "
+        ans.append(ele.rstrip())
+    return ans
+
+s = "CONTEST IS COMING"
+print(print_vertically(s))

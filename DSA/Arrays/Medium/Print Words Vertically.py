@@ -31,3 +31,28 @@ Constraints:
 s contains only upper case English letters.
 It's guaranteed that there is only one space between 2 words.
 '''
+def print_vertically(s):
+    # Splitting the words into a list.
+    words=s.split(" ")
+    # Finding the maximum length of the words present in the list. 
+    max_len=max(len(word) for word in words)
+    # Empty list to store the output of strings.
+    ans=[]
+    # Iterating over the length of maximum word.
+    for i in range(max_len):
+        # String to store the chars in vertical order
+        ele=""
+        # Iterating over each word in the list.
+        for word in words:
+            # If the index is less than the current word length, then we append the char to the string.  
+            if i<len(word):
+                ele+=word[i]
+            # Else we append a space.
+            else:
+                ele+=" "
+        # Appending the string to our list after removing trailing spaces on the right side.
+        ans.append(ele.rstrip())
+    return ans
+
+s = "CONTEST IS COMING"
+print(print_vertically(s))

@@ -24,3 +24,15 @@ D D D D
     B B 
       A 
 '''
+def rhombus_pattern(n):
+    var=65
+    for i in range(n):
+        print(" "*(n-i-1)*2 + (chr(var+i) + " ")*(i+1))
+
+    
+    for i in range(n-2,-1,-1):
+        print(" "*(n-i-1)*2 + (chr(var+i) + " ")*(i+1))
+    
+    return
+
+rhombus_pattern(int(input()))

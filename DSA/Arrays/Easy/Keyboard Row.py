@@ -41,7 +41,7 @@ def find_words(words):
         firstrowFlag=True
         secondrowFlag=True
         thirdrowFlag=True
-        # Iterating over each character in the word 
+        # Iterating over each character in the word  
         for char in word:
             # Checking for breaking conditions.
             if char not in firstrow:

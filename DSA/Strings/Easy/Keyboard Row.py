@@ -29,16 +29,21 @@ words[i] consists of English letters (both lowercase and uppercase).
 '''
 # Own Approach 
 def find_words(words):
+    # Storing the alphabet in separate strings for each row.
     firstrow='qwertyuiopQWERTYUIOP'
     secondrow='asdfghjklASDFGHJKL'
     thirdrow='zxcvbnmZXCVBNM'
+    # List to store the strings.
     output=[]
-
+    # looping over each word in the list.
     for word in words:
+        # Declaring flags to check the conditions.
         firstrowFlag=True
         secondrowFlag=True
         thirdrowFlag=True
+        # Iterating over each character in the word 
         for char in word:
+            # Checking for breaking conditions.
             if char not in firstrow:
                 firstrowFlag=False
             if char not in secondrow:
@@ -46,6 +51,7 @@ def find_words(words):
             if char not in thirdrow:
                 thirdrowFlag=False
         
+        # Appending to the list.
         if firstrowFlag:
             output.append(word)
         if secondrowFlag:

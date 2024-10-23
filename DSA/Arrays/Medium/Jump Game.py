@@ -20,3 +20,17 @@ Constraints:
 1 <= nums.length <= 104
 0 <= nums[i] <= 105
 '''
+def canJump(nums):
+    # variable to store the maximum index.
+    max_index=0
+
+    for i in range(len(nums)):
+        #  If current index crosses the maximum index that can be achieved by the current elements, we return FAlse
+        if i>max_index:
+            return False
+        max_index=max(max_index,i+nums[i])
+    return True
+
+nums = [[2,3,1,1,4],[3,2,1,0,4]]
+for testcase in nums:
+    print(canJump(testcase))

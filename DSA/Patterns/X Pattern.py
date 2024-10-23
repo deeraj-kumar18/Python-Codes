@@ -22,3 +22,18 @@ Output:
   2   2   
 1       1 
 '''
+def x_pattern(n):
+    c=n
+    for i in range(n):
+        for j in range(n):
+            if i==j or i+j==n-1:
+                print(c,end=" ")
+            else:
+                print(" ",end=" ")
+        print()
+        
+        c=c-1
+
+
+x_pattern(int(input()))
+

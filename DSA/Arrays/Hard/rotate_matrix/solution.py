@@ -10,8 +10,6 @@ def transpose_rotate(matrix):
     return ans
 
 def main(matrix,n):
-    # for i in range(n):
-    #     transpose_rotate(matrix)
     if n==0 or n//90==0:
         a=matrix
     elif n//90==1:

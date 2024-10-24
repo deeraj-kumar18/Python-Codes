@@ -19,14 +19,19 @@ Constraints:
 words[i] consists of lowercase English letters.
 """
 def find_common(words):
+    # Initially storing the characters of first word as ans in a list.
     ans=list(words[0])
+    # Iterating through the list from 2nd element onwards.
     for word in words[1:]:
         op=[]
+        # For every character in ans, we are checking if that character is present in the word also.
         for char in ans:
             if char in word:
+                # Appending the char to the temp list.
                 op.append(char)
+                # Replacing the character in word with an empty space to avoid duplicates.
                 word=word.replace(char,"",1)
-        
+        # Updating the ans list with the elements which are common in the words.
         ans=op
     
     return ans

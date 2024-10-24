@@ -32,3 +32,41 @@ True
 
 Explanation:
 February 29, 2020 is a valid date because 2020 is a leap year.'''
+def isLeapyear(year):
+    if year%4!=0 and year%400!=0 or year%100==0:
+        return False
+    return True
+    
+def is_valid_date(date_str: str):
+    if len(date_str)!=10 or date_str[2]!="/" or date_str[5]!="/":
+        return False
+    full_date = date_str.split("/")
+
+    if not(full_date[0].isdigit() and full_date[1].isdigit() and full_date[2].isdigit()):
+        return False
+  
+    day=int(full_date[0])
+    month=int(full_date[1])
+    year=int(full_date[2])
+    # print(day,month,year)
+    if year<1000 or year>9999:
+        return False 
+      
+    if month<1 or month>12:
+        return False
+    
+    no_of_days=[31,28,31,30,31,30,31,31,30,31,30,31]
+    if isLeapyear(year):
+          
+        no_of_days[1]=29
+    
+    if day<1 or day>no_of_days[month-1]:
+        return False
+    
+    return True
+
+s="29/02/2020"
+print(is_valid_date(s))
+    
+
+

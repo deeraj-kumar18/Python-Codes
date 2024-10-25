@@ -32,3 +32,9 @@ def rotateString(s,goal):
 s = "abcde"
 goal = "cdeab"
 print(rotateString(s,goal))
+
+# Approach 2
+def rotateString1(s,goal):
+    return len(s)==len(goal) and s in goal+goal 
+    
+print(rotateString1(s,goal))

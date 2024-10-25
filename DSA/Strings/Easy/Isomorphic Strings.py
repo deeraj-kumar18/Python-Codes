@@ -34,6 +34,21 @@ s and t consist of any valid ascii character.
 '''
 1)Initialise two dictionaries to store the mapping of each character from string1 to string2 and Vice versa
 2)For each character,we keep the character of other string as a value for current character as key.
-3)If the key already exists and the value is different, the condition'''
+3)If the key already exists and the value is different, the condition BREAKS and we return False
+4)After complete iteration, if we did not find any breaking condition, we Return TRUE'''
 def isIsomorphic(s, t):
-    return
+    StoTmap={}
+    TtoSmap={}
+    for i in range(len(s)):
+        char1,char2=s[i],t[i]
+        if((char1 in StoTmap and StoTmap[char1]!=char2) or (char2 in TtoSmap and TtoSmap[char2]!=char1)):
+            return False
+        
+        StoTmap[char1]=char2
+        TtoSmap[char2]=char1
+
+    return True
+
+s = "paper"
+t = "title"
+print(isIsomorphic(s,t))

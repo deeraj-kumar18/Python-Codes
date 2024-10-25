@@ -19,3 +19,16 @@ Constraints:
 1 <= s.length, goal.length <= 100
 s and goal consist of lowercase English letters.
 '''
+def rotateString(s,goal):
+    if len(s)!=len(goal):
+        return False
+    
+    for i in range(len(s)):
+        ans=s[-i:]+s[:-i]
+        if ans == goal:
+            return True
+    return False
+
+s = "abcde"
+goal = "cdeab"
+print(rotateString(s,goal))

@@ -16,3 +16,13 @@ Constraints:
 1 <= s.length, t.length <= 5 * 104
 s and t consist of lowercase English letters.
 '''
+from collections import Counter
+def isAnagram(s, t):
+    d1=Counter(s)
+    d2=Counter(t)
+
+    return d1==d2
+
+s = "anagram"
+t = "nagaraam"
+print(isAnagram(s,t))

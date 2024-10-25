@@ -19,3 +19,32 @@ Constraints:
 num1 and num2 consist of digits only.
 Both num1 and num2 do not contain any leading zero, except the number 0 itself.
 '''
+# Own Approach
+'''
+1)Stored each digit as a string as key and integer value as value in a dictionary.
+2)Iterating every string from the end and formulating the number using the dictionary.
+3)Checking for negative numbers.'''
+def multiply(s1, s2):
+    dic={'0':0,'1':1,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9}
+    no1=0
+    j=1
+    for i in range(len(s1)-1,-1,-1):
+        if s1[i] in dic:
+            no1+=dic[s1[i]]*j
+            j*=10
+            
+    if s1[0]=="-":
+        no1*=-1
+        
+    no2=0
+    j=1
+    for i in range(len(s2)-1,-1,-1):
+        if s2[i] in dic:
+            no2+=dic[s2[i]]*j
+            j*=10
+    
+    if s2[0]=="-":
+        no2*=-1
+        
+    return str(no1*no2)
+

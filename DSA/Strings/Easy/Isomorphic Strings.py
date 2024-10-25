@@ -37,6 +37,10 @@ s and t consist of any valid ascii character.
 3)If the key already exists and the value is different, the condition BREAKS and we return False
 4)After complete iteration, if we did not find any breaking condition, we Return TRUE'''
 def isIsomorphic(s, t):
+    # If the lengths of the strings are not equal, they cannot be isomorphic.
+    if len(s)!=len(t):
+        return 0
+    
     StoTmap={}
     TtoSmap={}
     for i in range(len(s)):

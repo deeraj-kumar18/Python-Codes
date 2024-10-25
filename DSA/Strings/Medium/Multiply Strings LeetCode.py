@@ -25,6 +25,7 @@ Both num1 and num2 do not contain any leading zero, except the number 0 itself.
 2)Iterating every string from the end and formulating the number using the dictionary.
 3)Checking for negative numbers.'''
 def multiply(s1, s2):
+    # Dictionary to store the digits and values.
     dic={'0':0,'1':1,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9}
     no1=0
     j=1
@@ -33,6 +34,7 @@ def multiply(s1, s2):
             no1+=dic[s1[i]]*j
             j*=10
             
+    # Negative number check
     if s1[0]=="-":
         no1*=-1
         

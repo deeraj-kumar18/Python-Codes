@@ -50,3 +50,12 @@ def multiply(s1, s2):
         
     return str(no1*no2)
 
+# Leetcode Approach
+def multiply(self, num1, num2):
+    x=0
+    for i in range(len(num1)):
+        x=x+int(num1[i])*(10**(len(num1)-i-1))
+    y=0
+    for i in range(len(num2)):
+        y=y+int(num2[i])*(10**(len(num2)-i-1))
+    return str(x*y) 

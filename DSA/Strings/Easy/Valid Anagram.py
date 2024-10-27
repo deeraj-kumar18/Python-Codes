@@ -16,6 +16,7 @@ Constraints:
 1 <= s.length, t.length <= 5 * 104
 s and t consist of lowercase English letters.
 '''
+# Dictionary approach
 from collections import Counter
 def isAnagram(s, t):
     # Creating dictionaries with frequencies of characters in the string.

@@ -30,3 +30,24 @@ def isPerfectSquare(num):
     return False
 
 print(isPerfectSquare(25))
+
+# Binary Search Approach
+def isPerfectSquare1(num):
+    if num<1:
+        return False
+    
+    left,right=1,num
+
+    while left<=right:
+        mid=(left+right)//2
+        sqaure=mid*mid
+        if sqaure==num:
+            return True
+        elif sqaure<num:
+            left=mid+1
+        else:
+            right=mid-1
+    
+    return False
+
+print(isPerfectSquare1(295))

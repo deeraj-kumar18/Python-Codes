@@ -39,3 +39,58 @@ Constraints:
 1 <= word.length <= 20
 word consists of English uppercase and lowercase letters, digits, '@', '#', and '$'.
 '''
+def isValid(word):
+    """
+    :type word: str
+    :rtype: bool
+    """
+    if len(word)<3:
+        return False
+    word=word.lower()
+    alnum="1234567890qwertyuiopasdfghjklzxcvbnm"
+    vowels='aeiou'
+    consonants='qwrtypsdfghjklzxcvbnm'
+    v_c,cons_c=0,0
+    for i in word:
+        if i not in alnum:
+            return False
+        if i in vowels:
+            v_c+=1
+        if i in consonants:
+            cons_c+=1
+    
+    if v_c<1 or cons_c<1:
+        return False
+    
+    return True
+
+word = "234Adas"
+print(isValid(word))
+
+# Leetcode Approach
+def isValid1(word):
+    """
+    :type word: str
+    :rtype: bool
+    """
+        
+    for letter in word:
+        if not letter.isalnum():
+            return False
+
+    if len(list(word)) < 3:
+        return False
+
+    numOfVowels = 0
+    numOfConsonants = 0
+
+    for letter in word:
+        if letter.lower() in ["a","e","i","o","u"]:
+            numOfVowels += 1
+        else:
+            if letter.isalpha():
+                numOfConsonants += 1
+
+    if numOfVowels == 0 or numOfConsonants == 0:
+        return False
+    return True

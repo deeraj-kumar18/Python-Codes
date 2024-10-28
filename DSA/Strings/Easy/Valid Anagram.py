@@ -29,3 +29,20 @@ def isAnagram(s, t):
 s = "anagram"
 t = "nagaraam"
 print(isAnagram(s,t))
+
+# Using Sets
+def isAnagram1(s,t):
+    if len(s)!=len(t):
+        return False
+
+    unique_letters=set(s)
+
+    for letter in unique_letters:
+        if s.count(letter)!=unique_letters.count(letter):
+            return False
+    
+    return True 
+
+s = "anagram"
+t = "nagaraam"
+print(isAnagram(s,t))

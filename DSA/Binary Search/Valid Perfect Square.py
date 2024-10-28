@@ -20,3 +20,13 @@ Explanation: We return false because 3.742 * 3.742 = 14 and 3.742 is not an inte
 Constraints:
 1 <= num <= 2**31 - 1
 '''
+# Naive Approach
+# TC: O(√n)
+def isPerfectSquare(num):
+    for i in range(1,int(num**0.5)+1):
+        if i*i==num:
+            return True
+    
+    return False
+
+print(isPerfectSquare(25))

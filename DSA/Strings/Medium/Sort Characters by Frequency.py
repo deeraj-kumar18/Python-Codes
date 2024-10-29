@@ -35,12 +35,16 @@ def frequencySort(s):
     :type s: str
     :rtype: str
     """
+    # Frequency count of characters in the String.
     a=Counter(s)
 
+    # List of Sorted Dictionary using frequency in Descending Order.  
     sorted_a=sorted(a.items(),key = lambda value:value[1],reverse=True)
     # print(sorted_a)        
     ans=""
+    # Iterating over the list
     for k,v in sorted_a:
+        # Concatenating each character for number the number of times it occurs.
         ans+=k*v
     
     return ans

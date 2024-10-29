@@ -21,3 +21,29 @@ Explanation: 5555..555 is not a valid. IPv4 address, as the middle two portions 
 Constraints:
 1<=str.length() <=15
 '''
+# Own Approach Raw Code
+def isValid(s):
+        #code here
+        if len(s)>15 or len(s)<1:
+            return False
+        
+        if s.count(".")!=3:
+            return False
+            
+        ip=s.split(".")
+        # print(ip)
+        if len(ip)<4 or len(ip)>4:
+            return False
+        
+        for seg in ip:
+            if seg=="":
+                return False
+            if len(seg)>1 and seg[0]=="0":
+                return False
+            if not(0<=int(seg)<=255):
+                return False
+        
+        return True
+
+s = "222.111.111.111"
+print(isValid(s))

@@ -47,3 +47,23 @@ def isValid(s):
 
 s = "222.111.111.111"
 print(isValid(s))
+
+# Revised and Restructured Code by GPT
+def isValid(self, s):
+    if len(s) > 15 or len(s) < 1:
+        return False
+
+    ip = s.split(".")
+    if len(ip) != 4:
+        return False
+
+    for seg in ip:
+        if seg == "" or (len(seg) > 1 and seg[0] == "0"):
+            return False
+        try:
+            if not (0 <= int(seg) <= 255):
+                return False
+        except ValueError:
+            return False
+
+    return True

@@ -60,6 +60,7 @@ def isValid(self, s):
     for seg in ip:
         if seg == "" or (len(seg) > 1 and seg[0] == "0"):
             return False
+        # Adding try catch block to ensure exception handling.
         try:
             if not (0 <= int(seg) <= 255):
                 return False

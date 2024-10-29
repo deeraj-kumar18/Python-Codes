@@ -1,5 +1,5 @@
 '''
-242. Valid Anagram
+242. Valid Anagram      https://leetcode.com/problems/valid-anagram/description/
 Easy
 
 Given two strings s and t, return true if t is an anagram of s, and false otherwise.

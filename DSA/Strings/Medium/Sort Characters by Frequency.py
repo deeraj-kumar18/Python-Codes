@@ -53,3 +53,20 @@ def frequencySort(s):
 s = "ccaaa"
 print(frequencySort(s))
         
+# Using get keyword in Dictionary.
+def frequencySort1(s):
+    freq=dict()
+    for c in s:
+        freq[c] = freq.get(c,0) + 1
+    
+    items=freq.items()
+    sort_arr=sorted(items,key=lambda x:x[1],reverse=True)
+
+    res_str=""
+    for c,f in freq.items():
+        res_str+=c*f
+    
+    return res_str
+
+s = "ccccaaa"
+print(frequencySort1(s))

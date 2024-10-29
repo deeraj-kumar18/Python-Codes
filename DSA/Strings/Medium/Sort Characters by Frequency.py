@@ -55,7 +55,9 @@ print(frequencySort(s))
         
 # Using get keyword in Dictionary.
 def frequencySort1(s):
+    # Dictionary
     freq=dict()
+    # Incrementing the count by 1 
     for c in s:
         freq[c] = freq.get(c,0) + 1
     

@@ -28,3 +28,24 @@ Constraints:
 1 <= s.length <= 5 * 105
 s consists of uppercase and lowercase English letters and digits.
 '''
+# Own Approach
+from collections import Counter
+def frequencySort(s):
+    """
+    :type s: str
+    :rtype: str
+    """
+    a=Counter(s)
+
+    sorted_a=sorted(a.items(),key = lambda value:value[1],reverse=True)
+    # print(sorted_a)        
+    ans=""
+    for k,v in sorted_a:
+        ans+=k*v
+    
+    return ans
+
+
+s = "ccaaa"
+print(frequencySort(s))
+        

@@ -33,3 +33,43 @@ Explanation: This is neither a IPv4 address nor a IPv6 address.
 Constraints:
 queryIP consists only of English letters, digits and the characters '.' and ':'.
 '''
+def validIPaddress(queryIP):
+    def isIPv4(ip):
+        parts=ip.split(".")
+        if len(parts)!=4:
+            return False
+        
+        for part in parts:
+            if not part.isdigit() or not 0<=int(part)<=255:
+                return False
+            if part[0]=='0' and len(part)>1:
+                return False
+        
+        return True
+    
+    def isIPv6(ip):
+        parts=ip.split(":")
+        if len(parts)!=8:
+            return False
+        
+        for part in parts:
+            if len(part)==0 or len(part)>4:
+                print(part)
+                return False
+            
+            if not all(c in "0123456789abcdefABCDEF" for c in part):
+                return False
+        
+        return True
+
+    if queryIP.count(".")==3 and isIPv4(queryIP):
+            return False
+    
+    elif queryIP.count(":")==7 and isIPv6(queryIP):
+        return "IPv6"
+
+    else:
+        return "Neither"
+
+ip=input()
+print(validIPaddress(ip))

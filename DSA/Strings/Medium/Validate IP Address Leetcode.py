@@ -36,12 +36,16 @@ queryIP consists only of English letters, digits and the characters '.' and ':'.
 def validIPaddress(queryIP):
     def isIPv4(ip):
         parts=ip.split(".")
+        # If there are more or less than 4 parts, we return False
         if len(parts)!=4:
             return False
         
+        # Iterating over every part.
         for part in parts:
+            # If the part is not digit or if it is not in the range of 0-255, we return False
             if not part.isdigit() or not 0<=int(part)<=255:
                 return False
+            # Checking for Leading zeros in the part.
             if part[0]=='0' and len(part)>1:
                 return False
         
@@ -49,14 +53,16 @@ def validIPaddress(queryIP):
     
     def isIPv6(ip):
         parts=ip.split(":")
+        # If there are more or less than 8 parts, we return False
         if len(parts)!=8:
             return False
         
+        # Iterating over every part.
         for part in parts:
+            # If the part is empty or greater than 4, we return False
             if len(part)==0 or len(part)>4:
-                print(part)
                 return False
-            
+            # Checking for Hexademical condition
             if not all(c in "0123456789abcdefABCDEF" for c in part):
                 return False
         

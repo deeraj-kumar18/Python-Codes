@@ -38,3 +38,20 @@ def Sqrt(num):
     return i-1
 
 print(Sqrt(80))            
+
+# Binary Search Approach
+def sqrt(num):
+    left,right=1,num
+    while left<=right:
+        mid=(left+right)//2
+        mid_sq=mid*mid
+        if mid_sq==num:
+            return mid
+        elif mid_sq<num:
+            left=mid+1
+        else:
+            right=mid-1
+    
+    return right
+
+print(sqrt(80))

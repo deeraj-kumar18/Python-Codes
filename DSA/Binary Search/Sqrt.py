@@ -28,10 +28,13 @@ def Sqrt(num):
     
     result=1
     i=0
+    # Till the result is less than or equal to the target number, we continue the loop.
     while result<=num:
         i+=1
+        # Updating result value with square of each number till the breaking condition.
         result= i*i
     
+    # Returning i-1 because the loop breaks after the squared value crosses the number, hence we return the before element.
     return i-1
 
 print(Sqrt(80))            

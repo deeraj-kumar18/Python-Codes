@@ -22,6 +22,10 @@ Constraints:
 '''
 # Brute Force Approach
 def Sqrt(num):
+    # Edge/Base cases
+    if num==0 or num==1:
+        return num
+    
     result=1
     i=0
     while result<=num:

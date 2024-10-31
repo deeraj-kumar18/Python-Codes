@@ -26,7 +26,7 @@ Constraints:
 1 <= nums[i] <= 100
 '''
 # BruteForce Approach
-def numIdenticalPairs(self, nums):
+def numIdenticalPairs(nums):
     """
     :type nums: List[int]
     :rtype: int
@@ -38,3 +38,13 @@ def numIdenticalPairs(self, nums):
                 count+=1
 
     return count
+
+from collections import Counter
+# Dictionary Approach
+def numIdenticalPairs1(nums):
+    dict=Counter(nums)
+    res=0
+    for v,c in dict.items():
+        res+= c*(c-1)//2
+    
+    return res

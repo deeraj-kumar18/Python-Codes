@@ -45,6 +45,7 @@ def numIdenticalPairs1(nums):
     dict=Counter(nums)
     res=0
     for v,c in dict.items():
+        # This is the formula to calculate the combinations.
         res+= c*(c-1)//2
     
     return res

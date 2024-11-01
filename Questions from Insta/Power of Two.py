@@ -25,3 +25,23 @@ Constraints:
 
 Follow up: Could you solve it without loops/recursion?
 '''
+# Brute Force Approach
+def isPowerOfTwo(n):
+    """
+    :type n: int
+    :rtype: bool
+    """
+    if n==1:
+        return True
+    x=1
+    for i in range(1,32):
+        x*=2
+        if x==n:
+            return True
+        if x>n:
+            print("hi")
+            return False
+    
+    return False
+
+print(isPowerOfTwo(128))

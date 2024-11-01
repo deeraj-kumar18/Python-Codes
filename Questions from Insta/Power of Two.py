@@ -39,7 +39,6 @@ def isPowerOfTwo(n):
         if x==n:
             return True
         if x>n:
-            print("hi")
             return False
     
     return False
@@ -56,3 +55,4 @@ def isPower(n):
         return False
 
 print(isPowerOfTwo(128))
+

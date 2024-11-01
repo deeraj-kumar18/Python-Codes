@@ -45,3 +45,14 @@ def isPowerOfTwo(n):
     return False
 
 print(isPowerOfTwo(128))
+
+# O(1) Solution, Optimal Solution
+def isPower(n):
+    if n==0:
+        return False
+    if n &(n-1)==0:
+        return True
+    else:
+        return False
+
+print(isPowerOfTwo(128))

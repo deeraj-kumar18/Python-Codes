@@ -25,3 +25,23 @@ Output: ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13"
 Constraints:
 1 <= n <= 104
 '''
+def fizzBuzz(n):
+    """
+    :type n: int
+    :rtype: List[str]
+    """
+    ans=[]
+    for i in range(1,n+1):
+        if i%5==0 and i%3==0:
+            ans.append("FizzBuzz")
+        elif i%3==0:
+            ans.append("Fizz")
+        elif i%5==0:
+            ans.append("Buzz")
+        else:
+            ans.append(str(i))
+    
+    return ans
+
+for i in range(22):
+    print(fizzBuzz(i))

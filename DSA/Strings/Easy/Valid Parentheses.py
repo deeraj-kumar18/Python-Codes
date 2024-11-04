@@ -43,8 +43,10 @@ def isValid(s):
     ans=[]
     dict={")":"(" , "}":"{" , "]":"["}
 
+    # Iterating over each character of the String.
     for char in s:
         if char in dict and ans:
+            # Checking for Breaking Condition.
             if dict[char]!=ans.pop():
                 return False
         else:
@@ -52,6 +54,7 @@ def isValid(s):
     
     return True if not ans else False 
 
+# Testing with multiple testcases.
 testcases=["()","()[]{}","(]","([])","[","(){}}{"]
 for testcase in testcases:
     print(isValid(testcase))

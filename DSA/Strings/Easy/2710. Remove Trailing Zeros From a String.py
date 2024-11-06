@@ -21,3 +21,14 @@ num consists of only digits.
 num doesn't have any leading zeros.
 
 '''
+# Naive Approach
+def removeTrailingZeros(num):
+    i=len(num)-1
+    while i>=0:
+        if num[i]=='0':
+            i-=1
+        else:
+            return num[:i+1]
+            break
+
+    return num

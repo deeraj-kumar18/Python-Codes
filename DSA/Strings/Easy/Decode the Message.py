@@ -41,23 +41,23 @@ key contains every letter in the English alphabet ('a' to 'z') at least once.
 message consists of lowercase English letters and ' '.
 '''
 def decodeMessage(key, message):
-    dict={}
-    a=97
-    for i in key:
-        if i == " ":
-            continue
-        if i not in dict:
-            dict[i]=chr(a)
-            a+=1
+        dict={}
+        a=97
+        for i in key:
+            if i == " ":
+                continue
+            if i not in dict:
+                dict[i]=chr(a)
+                a+=1
+            
+        ans=""
+        for i in message:
+            if i!=" ":
+                ans+=dict[i]
+            else:
+                ans+=" "
         
-    ans=""
-    for i in message:
-        if i!=" ":
-            ans+=dict[i]
-        else:
-            ans+=" "
-    
-    return ans
+        return ans
     
     
 key = "the quick brown fox jumps over the lazy dog"

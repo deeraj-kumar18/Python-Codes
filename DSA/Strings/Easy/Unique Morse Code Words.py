@@ -35,3 +35,25 @@ Constraints:
 1 <= words[i].length <= 12
 words[i] consists of lowercase English letters.
 '''
+def uniqueMorseRepresentations(words):
+    """
+    :type words: List[str]
+    :rtype: int
+    """
+    if len(words)==1:
+        return 1
+    lst=[".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
+    
+    
+    a=[]
+    for word in words:
+        ans=""
+        for char in word:
+            ans+=lst[ord(char)-97]
+        a.append(ans)
+
+    a=set(a)
+    return len(a)
+
+words = ["gin","zen","gig","msg"]
+print(uniqueMorseRepresentations(words))

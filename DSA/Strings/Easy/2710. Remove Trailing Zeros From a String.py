@@ -41,8 +41,15 @@ def removeTrailingZeros1(num):
     
     return num
 
+# Using inbuilt function rstrip.
+def removeTrailingZeros2(num):
+    if num=="0":
+        return num
+    return num.rstrip("0")
+
 # Testcases
 testcases=["109000","1","22","220","0","22220003000320"]
 for testcase in testcases:
     print(removeTrailingZeros(testcase))
     print(removeTrailingZeros1(testcase))
+    print(removeTrailingZeros2(testcase))

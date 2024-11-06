@@ -38,6 +38,8 @@ def removeTrailingZeros1(num):
     for i in range(len(num)-1,-1,-1):
         if num[i]!='0':
             return num[:i+1]
+    
+    return num
 
 # Testcases
 testcases=["109000","1","22","220","0","22220003000320"]

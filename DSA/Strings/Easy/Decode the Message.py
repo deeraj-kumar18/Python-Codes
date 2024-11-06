@@ -22,6 +22,7 @@ Input: key = "the quick brown fox jumps over the lazy dog", message = "vkbs bs t
 Output: "this is a secret"
 Explanation: The diagram above shows the substitution table.
 It is obtained by taking the first appearance of each letter in "the quick brown fox jumps over the lazy dog".
+
 Example 2:
 
 
@@ -39,3 +40,31 @@ key contains every letter in the English alphabet ('a' to 'z') at least once.
 1 <= message.length <= 2000
 message consists of lowercase English letters and ' '.
 '''
+def decodeMessage(key, message):
+    dict={}
+    a=97
+    for i in key:
+        if i == " ":
+            continue
+        if i not in dict:
+            dict[i]=chr(a)
+            a+=1
+        
+    ans=""
+    for i in message:
+        if i!=" ":
+            ans+=dict[i]
+        else:
+            ans+=" "
+    
+    return ans
+    
+    
+key = "the quick brown fox jumps over the lazy dog"
+message = "vkbs bs t suepuv"
+
+key1 = "eljuxhpwnyrdgtqkviszcfmabo"
+message1 = "zwx hnfx lqantp mnoeius ycgk vcnjrdb"
+
+print(decodeMessage(key,message))
+print(decodeMessage(key1,message1))

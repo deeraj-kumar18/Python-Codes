@@ -32,3 +32,15 @@ def removeTrailingZeros(num):
             break
 
     return num
+
+# Using For loop
+def removeTrailingZeros1(num):
+    for i in range(len(num)-1,-1,-1):
+        if num[i]!='0':
+            return num[:i+1]
+
+# Testcases
+testcases=["109000","1","22","220","0","22220003000320"]
+for testcase in testcases:
+    print(removeTrailingZeros(testcase))
+    print(removeTrailingZeros1(testcase))

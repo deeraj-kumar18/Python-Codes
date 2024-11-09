@@ -15,6 +15,7 @@ Output: [[1]]
 Constraints:
 1 <= numRows <= 30
 '''
+# Naive Approach
 def pascal_triangle(n):
     a=[[1]]
     for i in range(n-1):
@@ -33,6 +34,8 @@ for i in range(1,6):
     print(pascal_triangle(i))
     print()
 
+
+# Approach utilising Math.
 # Variation using NcR formula. 
 
 from typing import *

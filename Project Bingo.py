@@ -8,7 +8,8 @@ def generateBoard():
     return board
 
 
-#FUNCTION 2
+#FUNCTION 2     
+# Used to display the game board.
 def displayBoard(board):
     for i in board:
         for j in i:
@@ -19,6 +20,7 @@ def displayBoard(board):
 
 
 #FUNCTION 3
+# Code to mark the board with a given number.
 def markNumber(board,number):
     for i in range(len(board)):
         for j in range(len(board[0])):
@@ -29,6 +31,7 @@ def markNumber(board,number):
 
 
 #FUNCTION 4
+# To take user input.
 def getUserNumber():
     while True:
         try:
@@ -43,6 +46,7 @@ def getUserNumber():
 
 
 #FUNCTION 5
+# funtion to check if the board is in winning condition.
 def checkWin(board):
     # return True or False
     allLines= vertlines(board)+horizlines(board)+diaglines(board)
@@ -72,6 +76,7 @@ def diaglines(board):
 
 
 #FUNCTION 6
+# Main Function to control the game play.
 def playBingoGame():
     print("Hello Mate! Welcome to Bingo!")
     print()

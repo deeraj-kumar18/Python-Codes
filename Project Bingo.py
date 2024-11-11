@@ -8,7 +8,8 @@ def generateBoard():
     return board
 
 
-#FUNCTION 2
+#FUNCTION 2     
+# Used to display the game board.
 def displayBoard(board):
     for i in board:
         for j in i:
@@ -19,6 +20,7 @@ def displayBoard(board):
 
 
 #FUNCTION 3
+# Code to mark the board with a given number.
 def markNumber(board,number):
     for i in range(len(board)):
         for j in range(len(board[0])):

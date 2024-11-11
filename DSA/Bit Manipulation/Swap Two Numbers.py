@@ -23,3 +23,19 @@ Expected Auxiliary Space: O(1)
 Constraints:
 1 ≤ a, b ≤ 10**6
 '''
+# Approach using XOR Operation
+'''
+In XOR operation, 
+if the inputs are same, the output is 0
+else, output is 1.
+
+Here , we perform XOR operation thrice to swap the numbers.
+'''
+def swap(a,b):
+    print("Before Swapping:",a,b)
+    a=a^b
+    b=a^b
+    a=a^b
+    print("After Swapping:",a,b)
+
+swap(2,3)

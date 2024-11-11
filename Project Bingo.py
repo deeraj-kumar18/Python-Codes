@@ -31,6 +31,7 @@ def markNumber(board,number):
 
 
 #FUNCTION 4
+# To take user input.
 def getUserNumber():
     while True:
         try:

@@ -33,9 +33,21 @@ Here , we perform XOR operation thrice to swap the numbers.
 '''
 def swap(a,b):
     print("Before Swapping:",a,b)
-    a=a^b
+    a=a^b  
     b=a^b
     a=a^b
     print("After Swapping:",a,b)
 
 swap(2,3)
+
+# Method 1 (Using Arithmetic Operators) 
+def swap1(x,y):
+    print("Before Swapping:",x,y)
+    x = x + y
+
+    y = x - y
+
+    x = x - y
+    print("After Swapping:",x,y)
+
+swap1(2,3)

@@ -51,3 +51,13 @@ def swap1(x,y):
     print("After Swapping:",x,y)
 
 swap1(2,3)
+
+# Multiplication and division can also be used for swapping.
+def swap2(a,b):
+    print("Before Swapping:",a,b)
+    a=a*b
+    b=a//b
+    a=a//b
+    print("After Swapping:",a,b)
+
+swap2(2,3)

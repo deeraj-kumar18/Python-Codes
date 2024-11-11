@@ -76,6 +76,7 @@ def diaglines(board):
 
 
 #FUNCTION 6
+# Main Function to control the game play.
 def playBingoGame():
     print("Hello Mate! Welcome to Bingo!")
     print()

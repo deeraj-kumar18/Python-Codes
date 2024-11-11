@@ -46,6 +46,7 @@ def getUserNumber():
 
 
 #FUNCTION 5
+# funtion to check if the board is in winning condition.
 def checkWin(board):
     # return True or False
     allLines= vertlines(board)+horizlines(board)+diaglines(board)

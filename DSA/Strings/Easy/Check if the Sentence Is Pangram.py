@@ -25,6 +25,7 @@ sentence consists of lowercase English letters.
 TC: O(N)
 SC: O(1)
 '''
+from collections import Counter
 def checkIfPangram(sentence):
     """
     :type sentence: str
@@ -44,6 +45,29 @@ def checkIfPangram(sentence):
     else:
         return False
 
+# Approach 2 using Dictionaries.
+def checkIfPangram1(sentence):
+    alpha="qwertyuiopasdfghjklzxcvbnm"
+    a=Counter(alpha)
+    b=Counter(set(sentence))
+    # print(a)
+    # print(b)
+
+    return a==b
+
+# Approach 3 using Sets
+def checkIfPangram2(sentence):
+    seen=set()
+    for i in sentence:
+        seen.add(i)
+    # print(seen,len(seen))
+    if len(seen)==26:
+        return True
+    
+    return False
+
 testcases=["thequickbrownfoxjumpsoverthelazydog","leetcode","jwtucoucmdfwxxqnxzkaxoglszmfrcvjoiunqqausaxxaaijyqdqgvdnqcaihwilqkpivenpnekioyqujrdrovqrlxovcucjqzjsxmllfgndfprctxvxwlzjtciqxgsxfwhmuzqvlksyuztoetyjugmswfjtawwaqmwyxmvo"]
 for testcase in testcases:
     print(checkIfPangram(testcase))
+    print(checkIfPangram1(testcase))
+    print(checkIfPangram2(testcase))

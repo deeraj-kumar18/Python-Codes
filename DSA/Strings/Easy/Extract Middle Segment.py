@@ -64,6 +64,7 @@ test_cases = [
     }
 ]
 
+
 # Function to test all cases
 def test_extract_middle_segment(function):
     for i, test_case in enumerate(test_cases, 1):

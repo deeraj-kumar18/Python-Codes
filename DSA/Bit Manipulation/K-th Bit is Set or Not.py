@@ -36,6 +36,7 @@ print(check_if_set(4,0))
 
 # Using Left Shift.
 def check_if_set1(n,k):
+    # We left shift 1 by k times to generate the number which is equivalent to the set bit.
     num=1<<k
     if num & n != 0:
         return True

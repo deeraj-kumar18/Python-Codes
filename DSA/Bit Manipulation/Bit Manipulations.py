@@ -27,7 +27,7 @@ Constraints:
 0<=num<=10^9
 1<=i<=32
 '''
-def bitManipulation(self, num, i):
+def bitManipulation(num, i):
         # Code here
     ans=""
 
@@ -39,7 +39,7 @@ def bitManipulation(self, num, i):
     else:
         ans+="0"
         ans+=" "
-        
+
     # # Setting ith bit
     b=num | ( 1<<i-1)
     ans+=str(b)
@@ -51,3 +51,6 @@ def bitManipulation(self, num, i):
     ans+=" "
     
     print(ans.strip())
+
+bitManipulation(70,3)
+bitManipulation(8,1)

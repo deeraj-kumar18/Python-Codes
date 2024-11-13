@@ -20,3 +20,12 @@ Expected Auxiliary Space: O(1)
 Constraints:
 0 <= n <= 10^4
 '''
+
+def oddEven(n):
+    if n & 1 !=0:
+        return "Odd"
+    else:
+        return "Even"
+
+for i in range(50):
+    print(f"The number {i} is:",oddEven(i))    

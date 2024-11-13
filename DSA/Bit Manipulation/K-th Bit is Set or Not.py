@@ -22,8 +22,11 @@ Constraints:
 1 ≤ n ≤ 10**9
 0 ≤ k ≤ 31
 '''
+# Using Right Shift.
 def check_if_set(n,k):
+    # we are right-shifting the number k times to get the digit at ones place. 
     num=n>>k
+    # We perform bitwise AND operation between num and 1, if the ones digit is 1 , then the output will be 1 else 0 
     if num & 1 != 0:
         return True
     else:

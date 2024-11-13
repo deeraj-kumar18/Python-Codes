@@ -22,3 +22,11 @@ Constraints:
 1 ≤ n ≤ 10**9
 0 ≤ k ≤ 31
 '''
+def check_if_set(n,k):
+    num=n>>k
+    if num & 1 != 0:
+        return True
+    else:
+        return False
+
+print(check_if_set(4,0))

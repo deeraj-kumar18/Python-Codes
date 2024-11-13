@@ -20,8 +20,9 @@ Expected Auxiliary Space: O(1)
 Constraints:
 0 <= n <= 10^4
 '''
-
+# Approach using Bit Manipulation
 def oddEven(n):
+    # If number and bitwise AND of 1 result is 0, then the Number is Even else Odd.
     if n & 1 !=0:
         return "Odd"
     else:

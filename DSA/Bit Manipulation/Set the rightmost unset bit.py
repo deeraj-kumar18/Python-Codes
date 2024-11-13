@@ -19,3 +19,9 @@ Expected Auxiliary Space: O(1)
 Constraints:
 1 <= n <= 10**9
 '''
+def set_rightmost(n):
+    next_num=n+1    # Adding 1 to n effectively flips all the trailing 1s in n to 0 and the first 0 to 1.
+    # When we perform an OR operation with the original number, it sets the rightmost 0 bit in n to 1, without affecting any other bits.
+    return n | next_num
+
+print(set_rightmost(15))

@@ -21,6 +21,8 @@ Expected Auxiliary Space: O(1)
 Constraints:
 1 ≤ n ≤ 10^8
 '''
+# Approach using Modulo and Division.
+
 def countSetBits(n):
         c=0
         while n>1:
@@ -35,4 +37,19 @@ def countSetBits(n):
         return c
     
     
+print(countSetBits(15))
+
+# Approach using Right Shift  and bitwise AND.
+def countSetBits1(n):
+        c=0
+        while n>1:
+            if n&1==1:
+                c+=1
+            n=n>>2
+        
+        if n==1:
+            c+=1
+       
+        
+        return c
 print(countSetBits(15))

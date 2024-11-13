@@ -21,3 +21,18 @@ Expected Auxiliary Space: O(1)
 Constraints:
 1 ≤ n ≤ 10^8
 '''
+def countSetBits(n):
+        c=0
+        while n>1:
+            if n%2==1:
+                c+=1
+            n=n//2
+        
+        if n==1:
+            c+=1
+       
+        
+        return c
+    
+    
+print(countSetBits(15))

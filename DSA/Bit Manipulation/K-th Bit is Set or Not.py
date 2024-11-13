@@ -33,3 +33,13 @@ def check_if_set(n,k):
         return False
 
 print(check_if_set(4,0))
+
+# Using Left Shift.
+def check_if_set1(n,k):
+    num=1<<k
+    if num & n != 0:
+        return True
+    else:
+        return False
+
+print(check_if_set1(4,0))

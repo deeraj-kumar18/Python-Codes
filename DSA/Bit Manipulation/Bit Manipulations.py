@@ -27,3 +27,27 @@ Constraints:
 0<=num<=10^9
 1<=i<=32
 '''
+def bitManipulation(self, num, i):
+        # Code here
+    ans=""
+
+    # Getting ith bit
+    a=num>>i-1
+    if a&1==1:
+        ans+="1"
+        ans+=" "
+    else:
+        ans+="0"
+        ans+=" "
+        
+    # # Setting ith bit
+    b=num | ( 1<<i-1)
+    ans+=str(b)
+    ans+=" "
+    
+    # # Clearing ith bit.
+    c=~(1<<i-1) & num
+    ans+=str(c)
+    ans+=" "
+    
+    print(ans.strip())

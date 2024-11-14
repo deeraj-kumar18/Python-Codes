@@ -23,6 +23,10 @@ Constraints:
 -3 * 104 <= nums[i] <= 3 * 104
 Each element in the array appears twice except for one element which appears only once.
 '''
+# Approach using Bit Manipulation
+'''
+when we XOR same values, we get a 0 and the number occuring once will remain.
+'''
 def singleNumber(nums):
     ans=0
     for num in nums:

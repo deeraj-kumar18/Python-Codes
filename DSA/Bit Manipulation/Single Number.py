@@ -23,3 +23,12 @@ Constraints:
 -3 * 104 <= nums[i] <= 3 * 104
 Each element in the array appears twice except for one element which appears only once.
 '''
+def singleNumber(nums):
+    ans=0
+    for num in nums:
+        ans=ans^num
+    
+    return ans
+
+nums = [4,1,2,1,2]
+print(singleNumber(nums))

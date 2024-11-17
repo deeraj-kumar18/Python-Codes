@@ -31,4 +31,5 @@ def oddEven(n):
 
 # Testing
 for i in range(50):
+    
     print(f"The number {i} is:",oddEven(i))    

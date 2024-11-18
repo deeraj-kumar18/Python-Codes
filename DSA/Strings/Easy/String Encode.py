@@ -30,8 +30,11 @@ def string_encode(string):
             ans+=f"{count}{string[i-1]}"
             count=1
 
-    ans+=f"{count}{string[i-1]}"
+    ans+=f"{count}{string[-1]}"
 
     return ans
 
-print(string_encode("aaaabbbbbbcccdd"))
+# Testing
+testcases=["aaaabbbbbbcccdd","aabbcc" ,"abcd" ]
+for testcase in testcases:
+    print(string_encode(testcase))

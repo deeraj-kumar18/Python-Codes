@@ -17,8 +17,8 @@ output:2a2b2c
 Example 3:
 input:abcd
 output:1a1b1c1d
-
 '''
+# Simple Counting Approach 
 
 def string_encode(string):
     ans=""

@@ -34,6 +34,7 @@ def removeTrailingZeros(num):
     return num
 
 # Using For loop
+
 def removeTrailingZeros1(num):
     for i in range(len(num)-1,-1,-1):
         if num[i]!='0':
@@ -42,6 +43,7 @@ def removeTrailingZeros1(num):
     return num
 
 # Using inbuilt function rstrip.
+
 def removeTrailingZeros2(num):
     if num=="0":
         return num
